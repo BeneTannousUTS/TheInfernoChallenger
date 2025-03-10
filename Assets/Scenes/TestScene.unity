@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 2096920845}
   - component: {fileID: 2096920844}
   - component: {fileID: 2096920849}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TempPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c28616920ff4374a6041d36c1f3d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 300
+  moveSpeed: 8
+  jumpSpeed: 15
 --- !u!50 &2096920845
 Rigidbody2D:
   serializedVersion: 5
