@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        float characterHeightFromCenterToGround = 0.6f; // will need to be updated when changed from default sprite
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround);
+
         float xInput = Input.GetAxisRaw("Horizontal");
         if (xInput != 0)
         {
@@ -28,13 +31,21 @@ public class PlayerMovement : MonoBehaviour
                 rb.linearVelocityX = xInput * moveSpeed;
             }
         }
-        anim.SetFloat("walkSpeed", xInput);
 
-        float characterHeightFromCenterToGround = 0.6f; // will need to be updated when changed from default sprite
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround);
+        
+        if (!currentChain) 
+        {
+            anim.SetFloat("walkSpeed", xInput);
+        } else
+        {
+            anim.SetFloat("walkSpeed", 0);
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Space) && raycastHit2D && !currentChain)
         {
             Debug.Log("Jump");
+            anim.SetTrigger("Jump");
             rb.linearVelocityY = jumpSpeed;
         } else if (Input.GetKeyDown(KeyCode.Space) && currentChain)
         {
