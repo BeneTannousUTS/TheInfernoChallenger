@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    Animator anim;
     public float baseGravityScale = 3f;
     [SerializeField]
     public float moveSpeed;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Application.targetFrameRate = 60; // JUST FOR TESTING THIS CAN BE REMOVED LATER
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.linearVelocityX = xInput * moveSpeed;
             }
         }
+        anim.SetFloat("walkSpeed", xInput);
 
         float characterHeightFromCenterToGround = 0.6f; // will need to be updated when changed from default sprite
         RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround);
