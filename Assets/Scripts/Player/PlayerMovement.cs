@@ -40,13 +40,11 @@ public class PlayerMovement : MonoBehaviour
         float yInput = Input.GetAxisRaw("Vertical");
         if (yInput == 1)
         {
-            RaycastHit2D ladderCheckUp = Physics2D.Raycast(transform.position,Vector2.up,characterHeightFromCenterToGround*2,IgnoreCameraSnap);
+            RaycastHit2D ladderCheckUp = Physics2D.Raycast(transform.position,Vector2.up,characterHeightFromCenterToGround*3,IgnoreCameraSnap);
             if (ladderCheckUp && ladderCheckUp.transform.gameObject.CompareTag("Ladder")) 
             {
                 ladderCheckUp.transform.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 yDir = 1f;
-                rb.linearVelocityX = 0f;
-                rb.gravityScale = 0f;
                 onLadder = true;
             }
         }
@@ -57,14 +55,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 ladderCheckDown.transform.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 yDir = -1f;
-                rb.linearVelocityX = 0f;
-                rb.gravityScale = 0f;
                 onLadder = true;
             }
         }
 
         if (onLadder) {
             rb.linearVelocityY = yDir*moveSpeed;
+            rb.linearVelocityX = 0f;
         }
 
         
