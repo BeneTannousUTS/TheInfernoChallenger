@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public SwingingChain currentChain = null;
     float yDir = 0f;
     bool onLadder = false;
+    public Camera mainCamera;
+    public LayerMask IgnoreCameraSnap;
 
     void Start()
     {
@@ -24,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float characterHeightFromCenterToGround = 0.6f; // will need to be updated when changed from default sprite
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround);
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround,IgnoreCameraSnap);
 
         float xInput = Input.GetAxisRaw("Horizontal");
         if (xInput != 0)
@@ -38,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         float yInput = Input.GetAxisRaw("Vertical");
         if (yInput == 1)
         {
-            RaycastHit2D ladderCheckUp = Physics2D.Raycast(transform.position,Vector2.up,characterHeightFromCenterToGround);
+            RaycastHit2D ladderCheckUp = Physics2D.Raycast(transform.position,Vector2.up,characterHeightFromCenterToGround*2,IgnoreCameraSnap);
             if (ladderCheckUp && ladderCheckUp.transform.gameObject.CompareTag("Ladder")) 
             {
                 ladderCheckUp.transform.gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -50,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (yInput == -1)
         {
-            RaycastHit2D ladderCheckDown = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround);
+            RaycastHit2D ladderCheckDown = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround,IgnoreCameraSnap);
             if (ladderCheckDown && ladderCheckDown.transform.gameObject.CompareTag("Ladder"))
             {
                 ladderCheckDown.transform.gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -92,6 +94,9 @@ public class PlayerMovement : MonoBehaviour
         if (collider.gameObject.name.Equals("ChainRope") && !currentChain)
         {
             collider.gameObject.transform.parent.gameObject.GetComponent<SwingingChain>().AttachPlayer(gameObject);
+        }
+        else if (collider.gameObject.CompareTag("CameraSnapPos")) {
+            mainCamera.transform.position = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, -10f);
         }
     }
 
