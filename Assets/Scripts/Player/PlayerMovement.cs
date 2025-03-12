@@ -6,15 +6,24 @@ public class PlayerMovement : MonoBehaviour
     public CircleCollider2D col;
     Animator anim;
     public float baseGravityScale = 3f;
+
     [SerializeField]
     public float moveSpeed;
     [SerializeField]
     public float jumpSpeed;
+    [SerializeField]
+    float slowDownSpeed;
+    public float coyoteTime = 0.15f;
+    public float jumpBufferTime = 0.2f;
+
     public SwingingChain currentChain = null;
     float yDir = 0f;
     bool onLadder = false;
     public Camera mainCamera;
     public LayerMask IgnoreCameraSnap;
+
+    private float coyoteTimer = 0f;
+    private float jumpBufferTimer = 0f;
 
     void Start()
     {
@@ -25,8 +34,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float characterHeightFromCenterToGround = 0.6f; // will need to be updated when changed from default sprite
+        float characterHeightFromCenterToGround = 0.6f;
         RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround,IgnoreCameraSnap);
+
+        if (raycastHit2D)
+        {
+            coyoteTimer = coyoteTime;
+        }
+        else
+        {
+            coyoteTimer -= Time.deltaTime;
+        }
 
         float xInput = Input.GetAxisRaw("Horizontal");
         if (xInput != 0)
@@ -35,6 +53,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.linearVelocityX = xInput * moveSpeed;
             }
+        } else
+        {
+            int dir = (int) Mathf.Sign(rb.linearVelocityX);
+
+            if (dir > 0)
+            {
+                rb.linearVelocityX = Mathf.Clamp(rb.linearVelocityX - slowDownSpeed, 0, moveSpeed);
+            } else
+            {
+                rb.linearVelocityX = Mathf.Clamp(rb.linearVelocityX + slowDownSpeed, moveSpeed * -1, 0);
+            }  
         }
 
         float yInput = Input.GetAxisRaw("Vertical");
@@ -64,7 +93,15 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocityX = 0f;
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpBufferTimer = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferTimer -= Time.deltaTime;
+        }
+
         if (!currentChain && !onLadder) 
         {
             anim.SetFloat("walkSpeed", xInput);
@@ -73,15 +110,22 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("walkSpeed", 0);
         }
 
+        Debug.Log("jumptime: " + jumpBufferTimer + "|| coyotime: " + coyoteTimer);
 
-        if (Input.GetKeyDown(KeyCode.Space) && raycastHit2D && !currentChain && !onLadder)
+        if (jumpBufferTimer > 0 && coyoteTimer > 0 && !currentChain && !onLadder)
         {
-            Debug.Log("Jump");
             anim.SetTrigger("Jump");
             rb.linearVelocityY = jumpSpeed;
-        } else if (Input.GetKeyDown(KeyCode.Space) && currentChain)
+            jumpBufferTimer = 0;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space) && rb.linearVelocityY > 0)
         {
-            Debug.Log("Release Rope");
+            rb.linearVelocityY = rb.linearVelocityY * 0.5f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && currentChain)
+        {
             currentChain.DeattachPlayer(gameObject);
         }
     }
