@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8702439615268032815}
   m_Layer: 0
   m_Name: PirahnaEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,10 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  groundCheck: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  isAttacking: 0
 --- !u!50 &3413388616418468911
 Rigidbody2D:
   serializedVersion: 5

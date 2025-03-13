@@ -27,8 +27,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject fireBall;
     private float fireTimer = 5;
     private float turnTimer = 0;
+    private int fireCount = 2;
     private bool canFire = true;
     private bool fireWait = false;
+    public ParticleSystem particles;
     private bool facingLeft = false;
 
     [SerializeField] private Vector3 respawnPoint = new Vector3(-7f, 0.5f, 0f);
@@ -152,16 +154,23 @@ public class PlayerMovement : MonoBehaviour
             FireBall();
         }
 
-        if (fireWait)
+        if (!canFire)
         {
             fireTimer += Time.deltaTime;
+            if (fireTimer > 1 && fireCount > 0)
+            {
+                fireTimer = 0;
+                canFire = true;
+                particles.Play();
+            }
+        }
+        if (fireWait)
+        {
             turnTimer += Time.deltaTime;
             if (turnTimer > 4)
             {
-                fireTimer = 5;
                 turnTimer = 0;
-                canFire = true;
-                fireWait = false;
+                fireCount = 2;
             }
         }
     }
@@ -170,8 +179,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canFire)
         {
-            if (fireTimer > 1)
-            {
                 GameObject projectile;
                 if (facingLeft)
                 {
@@ -184,12 +191,9 @@ public class PlayerMovement : MonoBehaviour
                     projectile.GetComponent<FireBall>().facingRight = true;
                 }
                 fireWait = true;
-                if (fireTimer < 4)
-                {
-                    canFire = false;
-                }
+                canFire = false;
+                fireCount -= 1;
                 fireTimer = 0;
-            }
         }
     }
 

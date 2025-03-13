@@ -28,7 +28,7 @@ public class FireBall : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Insert Function to destroy enemy");
+                Destroy(collision.gameObject);
             }
             Destroy(gameObject);
         }
