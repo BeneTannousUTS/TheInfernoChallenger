@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
         rb.linearVelocity = new Vector2((movingRight ? 1 : -1) * moveSpeed, rb.linearVelocity.y);
     }
     
-    void Flip()
+    public void Flip()
     {
         movingRight = !movingRight;
         transform.Rotate(0f, 180f, 0f);

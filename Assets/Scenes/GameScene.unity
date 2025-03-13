@@ -684,6 +684,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 42, y: -12.5, z: 0}
   level: 1
+--- !u!1001 &113245864
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.253607
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3609021
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009391539995149055, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413388616418468911, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_Constraints
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8151110518908124685, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      propertyPath: m_Name
+      value: BatEnemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8151110518908124685, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1885062022}
+  m_SourcePrefab: {fileID: 100100000, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
 --- !u!1001 &113410276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1366,11 +1430,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 196848921259864833, guid: f8ebd914e27584e44876f43dc26f072f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.13
+      value: 8.07
       objectReference: {fileID: 0}
     - target: {fileID: 196848921259864833, guid: f8ebd914e27584e44876f43dc26f072f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.61
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: 196848921259864833, guid: f8ebd914e27584e44876f43dc26f072f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -42578,6 +42642,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 0
+--- !u!1 &1885062015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8151110518908124685, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
+  m_PrefabInstance: {fileID: 113245864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1885062022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885062015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dae64efc53a3f41bb6956d440d3963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseTime: 0.5
+  distanceToAttack: 5
+  swoopSpeed: 5
+  returnSpeed: 4
+  attackCooldown: 1.7
 --- !u!1 &1900012808
 GameObject:
   m_ObjectHideFlags: 0
@@ -43844,3 +43930,4 @@ SceneRoots:
   - {fileID: 1431818408}
   - {fileID: 2089223153}
   - {fileID: 206043433}
+  - {fileID: 113245864}
