@@ -6,11 +6,13 @@ TagManager:
   tags:
   - FirePit
   - Coin
+  - Ladder
+  - CameraSnapPos
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CameraSnap
   - Water
   - UI
   - 
