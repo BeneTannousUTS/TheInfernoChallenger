@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8525632799461440909}
   - component: {fileID: 439422558867830618}
   - component: {fileID: -194333202844200138}
+  - component: {fileID: 6694001742600257361}
   m_Layer: 0
   m_Name: PurpleFirePit
   m_TagString: FirePit
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1dfc251f9eb340e39385efb4da2ef2c, type: 3}
+  m_Sprite: {fileID: -5005990984189769374, guid: dba54ca1caba7fe4c9c6a54a4b6211f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,3 +154,25 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a1dfc251f9eb340e39385efb4da2ef2c, type: 3}
   - {fileID: 21300000, guid: 7a7dd65080f8441e89afbb86b67f19d1, type: 3}
   sprite: {fileID: 8525632799461440909}
+--- !u!95 &6694001742600257361
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921640460989007214}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ee34cab75455ad44ca2e9d6d22437ada, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
