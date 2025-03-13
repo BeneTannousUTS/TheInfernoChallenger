@@ -31,8 +31,6 @@ public class PlayerMovement : MonoBehaviour
     private bool fireWait = false;
     private bool facingLeft = false;
 
-    public bool isDead = false;
-
     [SerializeField] private Vector3 respawnPoint = new Vector3(-7f, 0.5f, 0f);
     [SerializeField] private int furthestLevelReached = 0;
     [SerializeField] private int currentLevel = 0;
@@ -45,12 +43,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update()
-    {
-        if (isDead) {
-            transform.position = respawnPoint;
-            isDead = false;
-        }
-        
+    {   
         float characterHeightFromCenterToGround = 0.6f;
         RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround,IgnoreCameraSnap);
 
@@ -206,6 +199,10 @@ public class PlayerMovement : MonoBehaviour
         {
             collider.gameObject.transform.parent.gameObject.GetComponent<SwingingChain>().AttachPlayer(gameObject);
         }
+        else if (collider.gameObject.CompareTag("FirePit")) //Add enemy tag and any other obstacle tags 
+        {
+            Die();
+        }
         else if (collider.gameObject.CompareTag("CameraSnapPos")) {
             mainCamera.transform.position = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, -10f);
             currentLevel = collider.gameObject.GetComponent<CheckpointScript>().level;
@@ -225,5 +222,11 @@ public class PlayerMovement : MonoBehaviour
             onLadder = false;
             rb.gravityScale = baseGravityScale;
         }
+    }
+
+    void Die()
+    {
+        // Call to livesManager
+        transform.position = respawnPoint;        
     }
 }
