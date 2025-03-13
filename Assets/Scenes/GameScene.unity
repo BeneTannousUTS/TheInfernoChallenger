@@ -253,6 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 20387493}
   - component: {fileID: 20387492}
+  - component: {fileID: 20387494}
   m_Layer: 3
   m_Name: CameraPosLevel3-3 (2)
   m_TagString: CameraSnapPos
@@ -321,6 +322,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &20387494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20387491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 38, y: -86.5, z: 0}
+  level: 8
 --- !u!1001 &26482855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,6 +589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 108355259}
   - component: {fileID: 108355258}
+  - component: {fileID: 108355260}
   m_Layer: 3
   m_Name: CameraPosLevel2-3
   m_TagString: CameraSnapPos
@@ -642,6 +658,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108355260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108355257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 42, y: -12.5, z: 0}
+  level: 1
 --- !u!1001 &113410276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -875,6 +905,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   fireBall: {fileID: 3873245984871645703, guid: be783cabfd2ecfa45809526f3aa275f2, type: 3}
+  respawnPoint: {x: -7, y: 0.5, z: 0}
+  furthestLevelReached: 0
+  currentLevel: 0
 --- !u!50 &135729166
 Rigidbody2D:
   serializedVersion: 5
@@ -966,7 +999,7 @@ Transform:
   m_GameObject: {fileID: 135729162}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.11, y: 0.52, z: 0}
+  m_LocalPosition: {x: -7, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -982,6 +1015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 151471507}
   - component: {fileID: 151471506}
+  - component: {fileID: 151471508}
   m_Layer: 3
   m_Name: CameraPosLevel3-1 (2)
   m_TagString: CameraSnapPos
@@ -1050,6 +1084,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151471508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151471505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 8
 --- !u!1001 &165179322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1604,6 +1652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270730097}
   - component: {fileID: 270730096}
+  - component: {fileID: 270730098}
   m_Layer: 3
   m_Name: CameraPosLevel4-3 (2)
   m_TagString: CameraSnapPos
@@ -1672,6 +1721,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &270730098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270730095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 9
 --- !u!1001 &292359594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1942,6 +2005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 306256535}
   - component: {fileID: 306256534}
+  - component: {fileID: 306256536}
   m_Layer: 3
   m_Name: CameraPosLevel2-2
   m_TagString: CameraSnapPos
@@ -2010,6 +2074,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &306256536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306256533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 18, y: -12.5, z: 0}
+  level: 1
 --- !u!1 &306547736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,6 +2655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 399374981}
   - component: {fileID: 399374980}
+  - component: {fileID: 399374982}
   m_Layer: 3
   m_Name: CameraPosLevel3-2
   m_TagString: CameraSnapPos
@@ -2645,6 +2724,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399374982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399374979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 23, y: -23.5, z: 0}
+  level: 2
 --- !u!1001 &410947465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2712,6 +2805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420874429}
   - component: {fileID: 420874428}
+  - component: {fileID: 420874430}
   m_Layer: 3
   m_Name: CameraPosLevel4-2
   m_TagString: CameraSnapPos
@@ -2780,6 +2874,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &420874430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420874427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 14, y: -34.5, z: 0}
+  level: 3
 --- !u!1001 &426838617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2980,6 +3088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491712115}
   - component: {fileID: 491712114}
+  - component: {fileID: 491712116}
   m_Layer: 3
   m_Name: CameraPosLevel2-2 (1)
   m_TagString: CameraSnapPos
@@ -3048,6 +3157,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &491712116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491712113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 24, y: 56.5, z: 0}
+  level: 5
 --- !u!1001 &501284571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3471,6 +3594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 581529724}
   - component: {fileID: 581529723}
+  - component: {fileID: 581529725}
   m_Layer: 3
   m_Name: CameraPosLevel4-2 (2)
   m_TagString: CameraSnapPos
@@ -3539,6 +3663,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581529725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581529722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 9
 --- !u!1001 &583076296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4016,6 +4154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 671837727}
   - component: {fileID: 671837726}
+  - component: {fileID: 671837728}
   m_Layer: 3
   m_Name: CameraPosLevel4-1 (1)
   m_TagString: CameraSnapPos
@@ -4084,6 +4223,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &671837728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671837725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: -4, y: -67.5, z: 0}
+  level: 6
 --- !u!1001 &680105294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4576,6 +4729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769331887}
   - component: {fileID: 769331886}
+  - component: {fileID: 769331888}
   m_Layer: 3
   m_Name: CameraPosLevel1-1 (1)
   m_TagString: CameraSnapPos
@@ -4644,6 +4798,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769331888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769331885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: -45.5, z: 0}
+  level: 4
 --- !u!1001 &834127376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4716,6 +4884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 839173272}
   - component: {fileID: 839173271}
+  - component: {fileID: 839173273}
   m_Layer: 3
   m_Name: CameraPosLevel3-3
   m_TagString: CameraSnapPos
@@ -4784,6 +4953,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &839173273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839173270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 2
 --- !u!1001 &861976032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6543,6 +6726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 927914692}
   - component: {fileID: 927914691}
+  - component: {fileID: 927914693}
   m_Layer: 3
   m_Name: CameraPosLevel4-3 (1)
   m_TagString: CameraSnapPos
@@ -6611,6 +6795,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &927914693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927914690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 6
 --- !u!1001 &929582073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36934,6 +37132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1043819283}
   - component: {fileID: 1043819282}
+  - component: {fileID: 1043819284}
   m_Layer: 3
   m_Name: CameraPosLevel3-1
   m_TagString: CameraSnapPos
@@ -37002,6 +37201,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1043819284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043819281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: -23.5, z: 0}
+  level: 2
 --- !u!1001 &1056471935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37140,6 +37353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1118247682}
   - component: {fileID: 1118247681}
+  - component: {fileID: 1118247683}
   m_Layer: 3
   m_Name: CameraPosLevel3-2 (1)
   m_TagString: CameraSnapPos
@@ -37208,6 +37422,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1118247683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118247680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 16, y: -78.5, z: 0}
+  level: 7
 --- !u!1001 &1121233124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37514,6 +37742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1139177950}
   - component: {fileID: 1139177949}
+  - component: {fileID: 1139177951}
   m_Layer: 3
   m_Name: CameraPosLevel1-2
   m_TagString: CameraSnapPos
@@ -37582,6 +37811,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1139177951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139177948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 0
 --- !u!1 &1140946990
 GameObject:
   m_ObjectHideFlags: 0
@@ -37826,6 +38069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1147828515}
   - component: {fileID: 1147828514}
+  - component: {fileID: 1147828516}
   m_Layer: 3
   m_Name: CameraPosLevel1-1
   m_TagString: CameraSnapPos
@@ -37894,6 +38138,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147828516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147828513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: -7, y: -1.5, z: 0}
+  level: 0
 --- !u!1 &1169372796
 GameObject:
   m_ObjectHideFlags: 0
@@ -38076,6 +38334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1195374760}
   - component: {fileID: 1195374759}
+  - component: {fileID: 1195374761}
   m_Layer: 3
   m_Name: CameraPosLevel4-1
   m_TagString: CameraSnapPos
@@ -38144,6 +38403,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1195374761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195374758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 3
 --- !u!1 &1200380929
 GameObject:
   m_ObjectHideFlags: 0
@@ -38154,6 +38427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1200380931}
   - component: {fileID: 1200380930}
+  - component: {fileID: 1200380932}
   m_Layer: 3
   m_Name: CameraPosLevel4-3
   m_TagString: CameraSnapPos
@@ -38222,6 +38496,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200380932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200380929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 43, y: -30.5, z: 0}
+  level: 3
 --- !u!1001 &1215116278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38604,6 +38892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1284660413}
   - component: {fileID: 1284660412}
+  - component: {fileID: 1284660414}
   m_Layer: 3
   m_Name: CameraPosLevel1-3 (1)
   m_TagString: CameraSnapPos
@@ -38672,6 +38961,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1284660414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284660411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 4
 --- !u!1001 &1302141120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38930,6 +39233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1385045769}
   - component: {fileID: 1385045768}
+  - component: {fileID: 1385045770}
   m_Layer: 3
   m_Name: CameraPosLevel2-1 (1)
   m_TagString: CameraSnapPos
@@ -38998,6 +39302,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1385045770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385045767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: -7, y: -56.5, z: 0}
+  level: 5
 --- !u!1001 &1412348884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39194,6 +39512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1431818408}
   - component: {fileID: 1431818407}
+  - component: {fileID: 1431818409}
   m_Layer: 3
   m_Name: CameraPosLevel4-1 (2)
   m_TagString: CameraSnapPos
@@ -39262,6 +39581,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1431818409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431818406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: -2, y: -100.5, z: 0}
+  level: 9
 --- !u!1 &1466801182
 GameObject:
   m_ObjectHideFlags: 0
@@ -39804,6 +40137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1545054205}
   - component: {fileID: 1545054204}
+  - component: {fileID: 1545054206}
   m_Layer: 3
   m_Name: CameraPosLevel2-3 (1)
   m_TagString: CameraSnapPos
@@ -39872,6 +40206,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1545054206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545054203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 44, y: -56.5, z: 0}
+  level: 5
 --- !u!1001 &1551451400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40006,6 +40354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615126125}
   - component: {fileID: 1615126124}
+  - component: {fileID: 1615126126}
   m_Layer: 3
   m_Name: CameraPosLevel3-1 (1)
   m_TagString: CameraSnapPos
@@ -40074,6 +40423,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1615126126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615126123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 7
 --- !u!1001 &1621060258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40708,6 +41071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779313062}
   - component: {fileID: 1779313061}
+  - component: {fileID: 1779313063}
   m_Layer: 3
   m_Name: CameraPosLevel3-2 (2)
   m_TagString: CameraSnapPos
@@ -40776,6 +41140,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1779313063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779313060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 8
 --- !u!1 &1788933052
 GameObject:
   m_ObjectHideFlags: 0
@@ -40786,6 +41164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788933054}
   - component: {fileID: 1788933053}
+  - component: {fileID: 1788933055}
   m_Layer: 3
   m_Name: CameraPosLevel2-1
   m_TagString: CameraSnapPos
@@ -40854,6 +41233,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1788933055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788933052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 1
 --- !u!1001 &1792763288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41704,6 +42097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858474053}
   - component: {fileID: 1858474052}
+  - component: {fileID: 1858474054}
   m_Layer: 3
   m_Name: CameraPosLevel1-2 (1)
   m_TagString: CameraSnapPos
@@ -41772,6 +42166,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1858474054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858474051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 4
 --- !u!1 &1867149850
 GameObject:
   m_ObjectHideFlags: 0
@@ -41782,6 +42190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1867149852}
   - component: {fileID: 1867149851}
+  - component: {fileID: 1867149853}
   m_Layer: 3
   m_Name: CameraPosLevel1-3
   m_TagString: CameraSnapPos
@@ -41850,6 +42259,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1867149853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867149850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 0
 --- !u!1 &1900012808
 GameObject:
   m_ObjectHideFlags: 0
@@ -41860,6 +42283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900012810}
   - component: {fileID: 1900012809}
+  - component: {fileID: 1900012811}
   m_Layer: 3
   m_Name: CameraPosLevel4-2 (1)
   m_TagString: CameraSnapPos
@@ -41928,6 +42352,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1900012811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900012808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 6
 --- !u!1 &1919805748
 GameObject:
   m_ObjectHideFlags: 0
@@ -42397,6 +42835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2065467600}
   - component: {fileID: 2065467599}
+  - component: {fileID: 2065467601}
   m_Layer: 3
   m_Name: CameraPosLevel3-3 (1)
   m_TagString: CameraSnapPos
@@ -42465,6 +42904,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2065467601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065467598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointWorldPos: {x: 0, y: 0, z: 0}
+  level: 7
 --- !u!1001 &2073335054
 PrefabInstance:
   m_ObjectHideFlags: 0
