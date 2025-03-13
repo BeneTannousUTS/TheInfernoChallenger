@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 5f09b88709da10746ab1e9a245cfa14e
+guid: 3b5925bbe8c8c824b8f16b126449feb2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6554660598349768955
-    second: piranha_0
+      213: 7675826601332790545
+    second: coin_0
   - first:
-      213: -8049882759247878910
-    second: piranha_1
+      213: -675104096977794455
+    second: coin_1
   - first:
-      213: -2522250388152515705
-    second: piranha_2
-  - first:
-      213: 3906752014233400219
-    second: piranha_3
-  - first:
-      213: 900338810670939071
-    second: piranha_4
+      213: -4412926668834298731
+    second: coin_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,89 +106,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: piranha_0
+      name: coin_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 3
         y: 2
-        width: 15
+        width: 10
         height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf823eb0615d6fa50800000000000000
-      internalID: 6554660598349768955
+      spriteID: 1155fe920a3068a60800000000000000
+      internalID: 7675826601332790545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: piranha_1
+      name: coin_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 21
         y: 2
-        width: 14
+        width: 7
         height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2052d73d742194090800000000000000
-      internalID: -8049882759247878910
+      spriteID: 96a4a31966c81a6f0800000000000000
+      internalID: -675104096977794455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: piranha_3
+      name: coin_2
       rect:
         serializedVersion: 2
-        x: 49
-        y: 3
-        width: 13
-        height: 12
+        x: 40
+        y: 2
+        width: 3
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b937ce11242973630800000000000000
-      internalID: 3906752014233400219
+      spriteID: 594a84c439222c2c0800000000000000
+      internalID: -4412926668834298731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: piranha_4
+      name: coin_3
       rect:
         serializedVersion: 2
-        x: 65
+        x: 55
         y: 2
-        width: 14
+        width: 7
         height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fbbf98bc065ae7c00800000000000000
-      internalID: 900338810670939071
+      spriteID: 31db615642264184a852e92900dda5cc
+      internalID: -1150380391
       vertices: []
       indices: 
       edges: []
@@ -203,7 +197,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9fce6a3c69c129f44b1c6a508fc1bca5
+    spriteID: f14e6154110f3b043849033a1ff3b258
     internalID: 0
     vertices: []
     indices: 
@@ -213,11 +207,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      piranha_0: 6554660598349768955
-      piranha_1: -8049882759247878910
-      piranha_2: -2522250388152515705
-      piranha_3: 3906752014233400219
-      piranha_4: 900338810670939071
+      coin_0: 7675826601332790545
+      coin_1: -675104096977794455
+      coin_2: -4412926668834298731
+      coin_3: -1150380391
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

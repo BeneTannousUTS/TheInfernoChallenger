@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 5f09b88709da10746ab1e9a245cfa14e
+guid: 0b154fc23547b5646a43c263550966ec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6554660598349768955
-    second: piranha_0
-  - first:
-      213: -8049882759247878910
-    second: piranha_1
-  - first:
-      213: -2522250388152515705
-    second: piranha_2
-  - first:
-      213: 3906752014233400219
-    second: piranha_3
-  - first:
-      213: 900338810670939071
-    second: piranha_4
+      213: -4026532601403577505
+    second: halfdirt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,89 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: piranha_0
+      name: halfdirt_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 15
-        height: 13
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf823eb0615d6fa50800000000000000
-      internalID: 6554660598349768955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: piranha_1
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 2
-        width: 14
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2052d73d742194090800000000000000
-      internalID: -8049882759247878910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: piranha_3
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 3
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b937ce11242973630800000000000000
-      internalID: 3906752014233400219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: piranha_4
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 2
-        width: 14
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fbbf98bc065ae7c00800000000000000
-      internalID: 900338810670939071
+      spriteID: f5b6fc8bee1ee18c0800000000000000
+      internalID: -4026532601403577505
       vertices: []
       indices: 
       edges: []
@@ -203,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9fce6a3c69c129f44b1c6a508fc1bca5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -213,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      piranha_0: 6554660598349768955
-      piranha_1: -8049882759247878910
-      piranha_2: -2522250388152515705
-      piranha_3: 3906752014233400219
-      piranha_4: 900338810670939071
+      halfdirt_0: -4026532601403577505
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

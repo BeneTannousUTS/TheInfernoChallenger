@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 5f09b88709da10746ab1e9a245cfa14e
+guid: dba54ca1caba7fe4c9c6a54a4b6211f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6554660598349768955
-    second: piranha_0
+      213: -5005990984189769374
+    second: poison_0
   - first:
-      213: -8049882759247878910
-    second: piranha_1
+      213: -887327768880906463
+    second: poison_1
   - first:
-      213: -2522250388152515705
-    second: piranha_2
+      213: 3296144372841241373
+    second: poison_2
   - first:
-      213: 3906752014233400219
-    second: piranha_3
-  - first:
-      213: 900338810670939071
-    second: piranha_4
+      213: 16603674079127399
+    second: poison_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: piranha_0
+      name: poison_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 15
-        height: 13
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf823eb0615d6fa50800000000000000
-      internalID: 6554660598349768955
+      spriteID: 2698f8609b5278ab0800000000000000
+      internalID: -5005990984189769374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: piranha_1
+      name: poison_1
       rect:
         serializedVersion: 2
         x: 17
-        y: 2
-        width: 14
-        height: 13
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2052d73d742194090800000000000000
-      internalID: -8049882759247878910
+      spriteID: 12f738078149fa3f0800000000000000
+      internalID: -887327768880906463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: piranha_3
+      name: poison_2
       rect:
         serializedVersion: 2
-        x: 49
-        y: 3
-        width: 13
-        height: 12
+        x: 34
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b937ce11242973630800000000000000
-      internalID: 3906752014233400219
+      spriteID: d1bda97e7d14ebd20800000000000000
+      internalID: 3296144372841241373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: piranha_4
+      name: poison_3
       rect:
         serializedVersion: 2
-        x: 65
-        y: 2
-        width: 14
-        height: 13
+        x: 51
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fbbf98bc065ae7c00800000000000000
-      internalID: 900338810670939071
+      spriteID: 767e37f14fcfa3000800000000000000
+      internalID: 16603674079127399
       vertices: []
       indices: 
       edges: []
@@ -203,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9fce6a3c69c129f44b1c6a508fc1bca5
+    spriteID: d27a537e0bf501347805808995971752
     internalID: 0
     vertices: []
     indices: 
@@ -213,11 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      piranha_0: 6554660598349768955
-      piranha_1: -8049882759247878910
-      piranha_2: -2522250388152515705
-      piranha_3: 3906752014233400219
-      piranha_4: 900338810670939071
+      poison_0: -5005990984189769374
+      poison_1: -887327768880906463
+      poison_2: 3296144372841241373
+      poison_3: 16603674079127399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
