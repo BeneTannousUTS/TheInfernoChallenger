@@ -24,6 +24,12 @@ public class PlayerMovement : MonoBehaviour
 
     private float coyoteTimer = 0f;
     private float jumpBufferTimer = 0f;
+    public GameObject fireBall;
+    private float fireTimer = 5;
+    private float turnTimer = 0;
+    private bool canFire = true;
+    private bool fireWait = false;
+    private bool facingLeft = false;
 
     void Start()
     {
@@ -49,6 +55,14 @@ public class PlayerMovement : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         if (xInput != 0)
         {
+            if (xInput > 0)
+            {
+                facingLeft = false;
+            }
+            else
+            {
+                facingLeft = true;
+            }
             if (!currentChain && !onLadder)
             {
                 rb.linearVelocityX = xInput * moveSpeed;
@@ -127,6 +141,51 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && currentChain)
         {
             currentChain.DeattachPlayer(gameObject);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            FireBall();
+        }
+
+        if (fireWait)
+        {
+            fireTimer += Time.deltaTime;
+            turnTimer += Time.deltaTime;
+            if (turnTimer > 4)
+            {
+                fireTimer = 5;
+                turnTimer = 0;
+                canFire = true;
+                fireWait = false;
+            }
+        }
+    }
+
+    void FireBall()
+    {
+        if (canFire)
+        {
+            if (fireTimer > 1)
+            {
+                GameObject projectile;
+                if (facingLeft)
+                {
+                    projectile = Instantiate(fireBall, transform.position + Vector3.left, transform.rotation);
+                    projectile.GetComponent<FireBall>().facingRight = false;
+                }
+                else
+                {
+                    projectile = Instantiate(fireBall, transform.position + Vector3.right, transform.rotation);
+                    projectile.GetComponent<FireBall>().facingRight = true;
+                }
+                fireWait = true;
+                if (fireTimer < 4)
+                {
+                    canFire = false;
+                }
+                fireTimer = 0;
+            }
         }
     }
 
