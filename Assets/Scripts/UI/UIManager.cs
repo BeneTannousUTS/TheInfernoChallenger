@@ -1,12 +1,20 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public TMP_Text scoreTxt;
     public TMP_Text timerTxt;
+    public Canvas gameCanvas;
+    public Canvas winCanvas;
+    public TMP_Text winScore;
+    public TMP_Text winTimer;
     private int score;
+    private int seconds;
+    private int minutes;
     private float timeTracker;
+    public GameObject wall;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,8 +39,22 @@ public class UIManager : MonoBehaviour
     private void UpdateTimer()
     {
         timeTracker += Time.deltaTime;
-        int seconds = Mathf.FloorToInt(timeTracker % 60);
-        int minutes = Mathf.FloorToInt(timeTracker / 60);
+        seconds = Mathf.FloorToInt(timeTracker % 60);
+        minutes = Mathf.FloorToInt(timeTracker / 60);
         timerTxt.text = ("Time: " + string.Format("{0:00}:{1:00}", minutes, seconds));
+    }
+
+    public void WinGame()
+    {
+        wall.SetActive(true);
+        gameCanvas.gameObject.SetActive(false);
+        winCanvas.gameObject.SetActive(true);
+        winScore.text = ("Score: " + string.Format("{0:0000000}", score));
+        winTimer.text = ("Time: " + string.Format("{0:00}:{1:00}", minutes, seconds));
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
