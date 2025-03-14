@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 383136807617246721}
   - component: {fileID: 3129408455362539620}
   - component: {fileID: -2148278542654414759}
+  - component: {fileID: 658987149235258391}
   m_Layer: 0
   m_Name: FirePit
   m_TagString: FirePit
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fe0816dfddfa6428e832b305bc3d0bbb, type: 3}
+  m_Sprite: {fileID: 8638237093462691967, guid: 638e860e0e24869469b275cf7f170c1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,3 +153,25 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: fe0816dfddfa6428e832b305bc3d0bbb, type: 3}
   sprite: {fileID: 383136807617246721}
+--- !u!95 &658987149235258391
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393552216364857201}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9fa67a3999553d45826de37e0d17aaf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
