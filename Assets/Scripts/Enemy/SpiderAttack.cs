@@ -21,7 +21,7 @@ public class SpiderAttack : MonoBehaviour
 
     void Update()
     {
-        if (!isAttacking && Vector2.Distance(transform.position, player.transform.position) <= distanceToAttack)
+        if (!isAttacking && Vector2.Distance(transform.position, player.transform.position) <= distanceToAttack && rb.linearVelocityY < 0.1 && rb.linearVelocityY > -0.1)
         {
             StartCoroutine(AttackSequence());
         }
@@ -31,7 +31,7 @@ public class SpiderAttack : MonoBehaviour
     {
         if (!isAttacking)
         {
-            GetComponent<EnemyMovement>().SetIsAttacking(true);
+            GetComponent<EnemyBase>().SetIsAttacking(true);
             isAttacking = true;
             rb.linearVelocity = Vector2.zero;
             yield return new WaitForSeconds(0.2f);
@@ -55,7 +55,7 @@ public class SpiderAttack : MonoBehaviour
 
             yield return new WaitForSeconds(1.7f); // Wait before next attack
 
-            GetComponent<EnemyMovement>().SetIsAttacking(false);
+            GetComponent<EnemyBase>().SetIsAttacking(false);
             isAttacking = false;
         }
     }

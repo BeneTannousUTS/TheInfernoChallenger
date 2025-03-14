@@ -27,13 +27,17 @@ public class PlayerMovement : MonoBehaviour
     public GameObject fireBall;
     private float fireTimer = 5;
     private float turnTimer = 0;
+    private int fireCount = 2;
     private bool canFire = true;
     private bool fireWait = false;
+    public ParticleSystem particles;
     private bool facingLeft = false;
 
     [SerializeField] private Vector3 respawnPoint = new Vector3(-7f, 0.5f, 0f);
     [SerializeField] private int furthestLevelReached = 0;
     [SerializeField] private int currentLevel = 0;
+
+    public bool paused = false;
 
     void Start()
     {
@@ -128,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("walkSpeed", 0);
         }
 
-        Debug.Log("jumptime: " + jumpBufferTimer + "|| coyotime: " + coyoteTimer);
+        //Debug.Log("jumptime: " + jumpBufferTimer + "|| coyotime: " + coyoteTimer);
 
         if (jumpBufferTimer > 0 && coyoteTimer > 0 && !currentChain && !onLadder)
         {
@@ -152,17 +156,30 @@ public class PlayerMovement : MonoBehaviour
             FireBall();
         }
 
-        if (fireWait)
+        if (!canFire)
         {
             fireTimer += Time.deltaTime;
+            if (fireTimer > 1 && fireCount > 0)
+            {
+                fireTimer = 0;
+                canFire = true;
+                particles.Play();
+            }
+        }
+        if (fireWait)
+        {
             turnTimer += Time.deltaTime;
             if (turnTimer > 4)
             {
-                fireTimer = 5;
                 turnTimer = 0;
-                canFire = true;
-                fireWait = false;
+                fireCount = 2;
             }
+        }
+
+        if (paused) 
+        {
+            rb.linearVelocityX = 0f;
+            rb.linearVelocityY = 0f;
         }
     }
 
@@ -170,8 +187,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canFire)
         {
-            if (fireTimer > 1)
-            {
                 GameObject projectile;
                 if (facingLeft)
                 {
@@ -184,12 +199,9 @@ public class PlayerMovement : MonoBehaviour
                     projectile.GetComponent<FireBall>().facingRight = true;
                 }
                 fireWait = true;
-                if (fireTimer < 4)
-                {
-                    canFire = false;
-                }
+                canFire = false;
+                fireCount -= 1;
                 fireTimer = 0;
-            }
         }
     }
 
@@ -199,13 +211,14 @@ public class PlayerMovement : MonoBehaviour
         {
             collider.gameObject.transform.parent.gameObject.GetComponent<SwingingChain>().AttachPlayer(gameObject);
         }
-        else if (collider.gameObject.CompareTag("FirePit")) //Add enemy tag and any other obstacle tags 
+        else if (collider.gameObject.CompareTag("FirePit") || collider.gameObject.CompareTag("Enemy")) //Add enemy tag and any other obstacle tags 
         {
             Die();
         }
         else if (collider.gameObject.CompareTag("CameraSnapPos")) {
             mainCamera.transform.position = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, -10f);
             currentLevel = collider.gameObject.GetComponent<CheckpointScript>().level;
+            FindAnyObjectByType<UIManager>().UpdateLevel(currentLevel);
             if (collider.gameObject.GetComponent<CheckpointScript>().level > furthestLevelReached) 
             {
                 furthestLevelReached = collider.gameObject.GetComponent<CheckpointScript>().level;
@@ -224,9 +237,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         // Call to livesManager
-        transform.position = respawnPoint;        
+        if (!paused) 
+        {
+            FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
+        }
     }
 }

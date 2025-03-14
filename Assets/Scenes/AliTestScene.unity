@@ -428,11 +428,15 @@ MonoBehaviour:
   baseGravityScale: 3
   moveSpeed: 8
   jumpSpeed: 20
+  slowDownSpeed: 0
+  coyoteTime: 0.15
+  jumpBufferTime: 0.2
   currentChain: {fileID: 0}
   mainCamera: {fileID: 355900526}
   IgnoreCameraSnap:
     serializedVersion: 2
     m_Bits: 1
+  fireBall: {fileID: 0}
 --- !u!50 &135729166
 Rigidbody2D:
   serializedVersion: 5

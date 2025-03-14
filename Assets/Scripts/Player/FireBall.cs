@@ -24,11 +24,16 @@ public class FireBall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("CameraSnapPos"))
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("CameraSnapPos") && !collision.gameObject.CompareTag("FireBall"))
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Insert Function to destroy enemy");
+                collision.GetComponent<EnemyBase>().AwardPoints();
+                Destroy(collision.gameObject);
+            }
+            if (collision.gameObject.CompareTag("Satan"))
+            {
+                collision.gameObject.GetComponent<SatanAttack>().takeDamage();
             }
             Destroy(gameObject);
         }
