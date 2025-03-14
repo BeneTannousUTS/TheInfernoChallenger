@@ -7,7 +7,7 @@ public class BatAttack : MonoBehaviour
     public float distanceToAttack = 5f;
     public float swoopSpeed = 7f;
     public float returnSpeed = 4f;
-    public float attackCooldown = 1.7f; // Time before next attack
+    public float attackCooldown = 0.7f; // Time before next attack
 
     private Rigidbody2D rb;
     private Transform player;

@@ -49,7 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  points: 200
   isAttacking: 0
+  flipCooldown: 0.5
 --- !u!50 &3413388616418468911
 Rigidbody2D:
   serializedVersion: 5
@@ -76,7 +78,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &-569055807442652695
 BoxCollider2D:
   m_ObjectHideFlags: 0
