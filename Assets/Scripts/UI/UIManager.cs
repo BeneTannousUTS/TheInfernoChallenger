@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text timerTxt;
     public Canvas gameCanvas;
     public Canvas winCanvas;
+    public Canvas loseCanvas;
     public TMP_Text winScore;
     public TMP_Text winTimer;
     private int score;
@@ -51,6 +52,12 @@ public class UIManager : MonoBehaviour
         winCanvas.gameObject.SetActive(true);
         winScore.text = ("Score: " + string.Format("{0:0000000}", score));
         winTimer.text = ("Time: " + string.Format("{0:00}:{1:00}", minutes, seconds));
+    }
+
+    public void LoseGame()
+    {
+        gameCanvas.gameObject.SetActive (false);
+        loseCanvas.gameObject.SetActive(true);
     }
 
     public void ReturnToMenu()
