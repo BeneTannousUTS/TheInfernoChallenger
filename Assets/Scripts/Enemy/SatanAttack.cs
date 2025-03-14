@@ -5,6 +5,7 @@ public class SatanAttack : MonoBehaviour
 {
     public GameObject fireBall;
     private bool attacking = false;
+    private int satanHealth = 30;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -109,5 +110,11 @@ public class SatanAttack : MonoBehaviour
         attacking = true;
         yield return new WaitForSeconds(1);
         attacking = false;
+    }
+
+    public void takeDamage()
+    {
+        satanHealth -= 1;
+        Debug.Log("Remaining health: " + satanHealth);
     }
 }

@@ -30,6 +30,10 @@ public class FireBall : MonoBehaviour
             {
                 Destroy(collision.gameObject);
             }
+            if (collision.gameObject.CompareTag("Satan"))
+            {
+                collision.gameObject.GetComponent<SatanAttack>().takeDamage();
+            }
             Destroy(gameObject);
         }
     }
