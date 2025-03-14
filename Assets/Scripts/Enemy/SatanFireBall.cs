@@ -28,8 +28,7 @@ public class SatanFireBall : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                collision.gameObject.SetActive(false);
-                FindAnyObjectByType<UIManager>().LoseGame();
+                collision.gameObject.GetComponent<PlayerMovement>().Die();
             }
             Debug.Log(collision.gameObject.name);
             Destroy(gameObject);

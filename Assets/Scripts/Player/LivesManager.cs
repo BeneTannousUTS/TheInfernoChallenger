@@ -37,10 +37,12 @@ public class LivesManager : MonoBehaviour
             lives = 3;
             respawnPos = new Vector3(-7f, 0.5f, 0f);
             FindAnyObjectByType<UIManager>().LoseGame();
+            FindAnyObjectByType<UIManager>().UpdateLives(0);
         }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         GameObject.FindWithTag("Player").transform.position = respawnPos;
+        FindAnyObjectByType<UIManager>().UpdateLives(lives);
     }
 }

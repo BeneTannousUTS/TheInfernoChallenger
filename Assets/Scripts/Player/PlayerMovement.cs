@@ -218,6 +218,7 @@ public class PlayerMovement : MonoBehaviour
         else if (collider.gameObject.CompareTag("CameraSnapPos")) {
             mainCamera.transform.position = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, -10f);
             currentLevel = collider.gameObject.GetComponent<CheckpointScript>().level;
+            FindAnyObjectByType<UIManager>().UpdateLevel(currentLevel);
             if (collider.gameObject.GetComponent<CheckpointScript>().level > furthestLevelReached) 
             {
                 furthestLevelReached = collider.gameObject.GetComponent<CheckpointScript>().level;
@@ -236,7 +237,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         // Call to livesManager
         if (!paused) 

@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public Canvas loseCanvas;
     public TMP_Text winScore;
     public TMP_Text winTimer;
+    public TMP_Text lives;
+    public TMP_Text level;
     private int score;
     private int seconds;
     private int minutes;
@@ -43,6 +45,16 @@ public class UIManager : MonoBehaviour
         seconds = Mathf.FloorToInt(timeTracker % 60);
         minutes = Mathf.FloorToInt(timeTracker / 60);
         timerTxt.text = ("Time: " + string.Format("{0:00}:{1:00}", minutes, seconds));
+    }
+
+    public void UpdateLevel(int newLevel) 
+    {
+        level.text = $"Level: {newLevel}";
+    }
+
+    public void UpdateLives(int newLives) 
+    {
+        lives.text = $"x {newLives}";
     }
 
     public void WinGame()
