@@ -1,15 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SatanAttack : MonoBehaviour
 {
     public GameObject fireBall;
     private bool attacking = false;
-    private int satanHealth = 5;
+    private float satanHealth = 5;
+    public Slider slider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        slider.value = 1;
     }
 
     // Update is called once per frame
@@ -115,6 +117,7 @@ public class SatanAttack : MonoBehaviour
     public void takeDamage()
     {
         satanHealth -= 1;
+        slider.value = satanHealth / 30f;
         Debug.Log("Remaining health: " + satanHealth);
         if (satanHealth == 0)
         {
