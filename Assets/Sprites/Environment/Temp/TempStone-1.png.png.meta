@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4349cf11cb75b4cf7a119c6dfe15cb07
+guid: 7a7dd65080f8441e89afbb86b67f19d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5405084888495848119
-    second: TempLeaf-1.png_0
+      213: -2520373932005931802
+    second: TempStone-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,11 +109,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TempLeaf-1.png_0
+      name: TempStone-1.png_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9458f586ee74df4b0800000000000000
-      internalID: -5405084888495848119
+      spriteID: 6e4c1a92345d50dd0800000000000000
+      internalID: -2520373932005931802
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TempLeaf-1.png_0: -5405084888495848119
+      TempStone-1.png_0: -2520373932005931802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
