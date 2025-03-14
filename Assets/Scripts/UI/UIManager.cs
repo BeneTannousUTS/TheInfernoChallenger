@@ -52,12 +52,14 @@ public class UIManager : MonoBehaviour
         winCanvas.gameObject.SetActive(true);
         winScore.text = ("Score: " + string.Format("{0:0000000}", score));
         winTimer.text = ("Time: " + string.Format("{0:00}:{1:00}", minutes, seconds));
+        GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().paused = true;
     }
 
     public void LoseGame()
     {
         gameCanvas.gameObject.SetActive (false);
         loseCanvas.gameObject.SetActive(true);
+        GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().paused = true;
     }
 
     public void ReturnToMenu()

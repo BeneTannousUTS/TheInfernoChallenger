@@ -37,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int furthestLevelReached = 0;
     [SerializeField] private int currentLevel = 0;
 
+    public bool paused = false;
+
     void Start()
     {
         Application.targetFrameRate = 60; // JUST FOR TESTING THIS CAN BE REMOVED LATER
@@ -173,6 +175,12 @@ public class PlayerMovement : MonoBehaviour
                 fireCount = 2;
             }
         }
+
+        if (paused) 
+        {
+            rb.linearVelocityX = 0f;
+            rb.linearVelocityY = 0f;
+        }
     }
 
     void FireBall()
@@ -231,6 +239,9 @@ public class PlayerMovement : MonoBehaviour
     void Die()
     {
         // Call to livesManager
-        transform.position = respawnPoint;        
+        if (!paused) 
+        {
+            FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
+        }
     }
 }
