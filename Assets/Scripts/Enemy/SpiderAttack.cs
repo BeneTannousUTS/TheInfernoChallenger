@@ -21,7 +21,7 @@ public class SpiderAttack : MonoBehaviour
 
     void Update()
     {
-        if (!isAttacking && Vector2.Distance(transform.position, player.transform.position) <= distanceToAttack)
+        if (!isAttacking && Vector2.Distance(transform.position, player.transform.position) <= distanceToAttack && rb.linearVelocityY < 0.1 && rb.linearVelocityY > -0.1)
         {
             StartCoroutine(AttackSequence());
         }
