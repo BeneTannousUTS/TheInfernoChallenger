@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
@@ -7,9 +8,13 @@ public class EnemyBase : MonoBehaviour
     
     private Rigidbody2D rb;
     private Animator anim;
+    private SpriteRenderer sr;
     private bool movingRight = false;
     public bool isAttacking = false;
     private UIManager uiManager;
+    
+    public bool IsFlipping { get; private set; } = false;
+    public float flipCooldown = 0.5f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,11 +22,19 @@ public class EnemyBase : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (rb.linearVelocityX > 0)
+        {
+            sr.flipX = true;
+        }else if (rb.linearVelocityX < 0)
+        {
+            sr.flipX = false;
+        }
         if (!isAttacking)
         {
             Move();
@@ -36,8 +49,8 @@ public class EnemyBase : MonoBehaviour
     
     public void Flip()
     {
+        rb.linearVelocityX *= -1;
         movingRight = !movingRight;
-        transform.Rotate(0f, 180f, 0f);
     }
 
     public void SetIsAttacking(bool attacking)
@@ -48,5 +61,20 @@ public class EnemyBase : MonoBehaviour
     public void AwardPoints()
     {
         uiManager.UpdateScore(points);
+    }
+    
+    public void StartFlipCooldown()
+    {
+        if (!IsFlipping)
+        {
+            StartCoroutine(FlipCooldownRoutine());
+        }
+    }
+
+    private IEnumerator FlipCooldownRoutine()
+    {
+        IsFlipping = true;
+        yield return new WaitForSeconds(flipCooldown);
+        IsFlipping = false;
     }
 }
