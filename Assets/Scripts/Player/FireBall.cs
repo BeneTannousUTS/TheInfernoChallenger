@@ -28,6 +28,7 @@ public class FireBall : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
+                collision.GetComponent<EnemyBase>().AwardPoints();
                 Destroy(collision.gameObject);
             }
             if (collision.gameObject.CompareTag("Satan"))

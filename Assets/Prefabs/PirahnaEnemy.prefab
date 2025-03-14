@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  points: 200
   isAttacking: 0
 --- !u!50 &3413388616418468911
 Rigidbody2D:

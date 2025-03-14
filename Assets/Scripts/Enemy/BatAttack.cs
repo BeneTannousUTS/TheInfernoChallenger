@@ -34,7 +34,7 @@ public class BatAttack : MonoBehaviour
     {
         if (!isAttacking)
         {
-            GetComponent<EnemyMovement>().SetIsAttacking(true);
+            GetComponent<EnemyBase>().SetIsAttacking(true);
             isAttacking = true;
             rb.linearVelocity = Vector2.zero;
             yield return new WaitForSeconds(pauseTime); // Pause before swoop
@@ -65,7 +65,7 @@ public class BatAttack : MonoBehaviour
             yield return new WaitForSeconds(attackCooldown); // Cooldown before next attack
 
             // Reset attack state
-            GetComponent<EnemyMovement>().SetIsAttacking(false);
+            GetComponent<EnemyBase>().SetIsAttacking(false);
             isAttacking = false;
         }
     }

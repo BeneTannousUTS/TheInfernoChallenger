@@ -32,7 +32,7 @@ public class PirahnaAttack : MonoBehaviour
         if (!isAttacking)
         {
             Debug.Log("Attacking");
-            GetComponent<EnemyMovement>().SetIsAttacking(true);
+            GetComponent<EnemyBase>().SetIsAttacking(true);
             isAttacking = true;
             rb.linearVelocity = Vector2.zero;
             yield return new WaitForSeconds(0.2f);
@@ -59,7 +59,7 @@ public class PirahnaAttack : MonoBehaviour
 
             yield return new WaitForSeconds(1.7f); // Wait before next attack
 
-            GetComponent<EnemyMovement>().SetIsAttacking(false);
+            GetComponent<EnemyBase>().SetIsAttacking(false);
             isAttacking = false;
         }
     }
