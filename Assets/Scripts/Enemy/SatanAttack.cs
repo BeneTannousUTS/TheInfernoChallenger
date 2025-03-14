@@ -6,7 +6,7 @@ public class SatanAttack : MonoBehaviour
 {
     public GameObject fireBall;
     private bool attacking = false;
-    private float satanHealth = 5;
+    private float satanHealth = 30;
     public Slider slider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
