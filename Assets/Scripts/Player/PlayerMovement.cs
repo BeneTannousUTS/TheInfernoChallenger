@@ -203,7 +203,7 @@ public class PlayerMovement : MonoBehaviour
         {
             collider.gameObject.transform.parent.gameObject.GetComponent<SwingingChain>().AttachPlayer(gameObject);
         }
-        else if (collider.gameObject.CompareTag("FirePit")) //Add enemy tag and any other obstacle tags 
+        else if (collider.gameObject.CompareTag("FirePit") || collider.gameObject.CompareTag("Enemy")) //Add enemy tag and any other obstacle tags 
         {
             Die();
         }
