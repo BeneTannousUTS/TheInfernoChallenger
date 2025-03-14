@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class SatanFireBall : MonoBehaviour
 {
     public bool facingRight;
     public Rigidbody2D rb;
@@ -24,12 +24,13 @@ public class FireBall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("CameraSnapPos") && !collision.gameObject.CompareTag("FireBall"))
+        if (!collision.gameObject.CompareTag("Satan") && !collision.gameObject.CompareTag("CameraSnapPos") && !collision.gameObject.CompareTag("FireBall"))
         {
-            if (collision.gameObject.CompareTag("Enemy"))
+            if (collision.gameObject.CompareTag("Player"))
             {
                 Destroy(collision.gameObject);
             }
+            Debug.Log(collision.gameObject.name);
             Destroy(gameObject);
         }
     }

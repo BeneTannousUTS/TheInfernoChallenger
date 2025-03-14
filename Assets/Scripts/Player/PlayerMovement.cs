@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("walkSpeed", 0);
         }
 
-        Debug.Log("jumptime: " + jumpBufferTimer + "|| coyotime: " + coyoteTimer);
+        //Debug.Log("jumptime: " + jumpBufferTimer + "|| coyotime: " + coyoteTimer);
 
         if (jumpBufferTimer > 0 && coyoteTimer > 0 && !currentChain && !onLadder)
         {

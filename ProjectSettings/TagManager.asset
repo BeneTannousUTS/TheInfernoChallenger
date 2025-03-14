@@ -9,6 +9,9 @@ TagManager:
   - Ladder
   - CameraSnapPos
   - Enemy
+  - Satan
+  - FireBall
+  - SatanFireBall
   layers:
   - Default
   - TransparentFX
