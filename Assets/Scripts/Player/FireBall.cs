@@ -16,15 +16,21 @@ public class FireBall : MonoBehaviour
         if (facingRight)
         {
             rb.linearVelocityX += 0.5f;
+            if (rb.linearVelocityX > 10f) {
+                rb.linearVelocityX = 10f;
+            }
         }
         else
         {
             rb.linearVelocityX -= 0.5f;
+            if (rb.linearVelocityX < -10f) {
+                rb.linearVelocityX = -10f;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("CameraSnapPos") && !collision.gameObject.CompareTag("FireBall"))
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("CameraSnapPos") && !collision.gameObject.CompareTag("FireBall") && !collision.gameObject.CompareTag("Coin") && !collision.gameObject.CompareTag("Ladder"))
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {

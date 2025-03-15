@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed;
     [SerializeField]
     float slowDownSpeed;
+    public float usedJumpSpeed; 
     public float coyoteTime = 0.15f;
     public float jumpBufferTime = 0.2f;
 
@@ -146,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
         if (jumpBufferTimer > 0 && coyoteTimer > 0 && !currentChain && !onLadder)
         {
             anim.SetTrigger("Jump");
-            rb.linearVelocityY = jumpSpeed;
+            rb.linearVelocityY = usedJumpSpeed;
             jumpBufferTimer = 0;
             coyoteTimer = 0;
         }
@@ -243,10 +244,12 @@ public class PlayerMovement : MonoBehaviour
             if (waterLevel) 
             {
                 rb.gravityScale = 0.5f*baseGravityScale;
+                usedJumpSpeed = 0.7f*jumpSpeed;
             }
             else 
             {
                 rb.gravityScale = baseGravityScale;
+                usedJumpSpeed = jumpSpeed;
             }
             if (satanLevel)
             {

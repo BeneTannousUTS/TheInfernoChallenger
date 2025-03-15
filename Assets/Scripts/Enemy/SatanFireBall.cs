@@ -16,10 +16,16 @@ public class SatanFireBall : MonoBehaviour
         if (facingRight)
         {
             rb.linearVelocityX += 0.5f;
+            if (rb.linearVelocityX > 10f) {
+                rb.linearVelocityX = 10f;
+            }
         }
         else
         {
             rb.linearVelocityX -= 0.5f;
+            if (rb.linearVelocityX < -10f) {
+                rb.linearVelocityX = -10f;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

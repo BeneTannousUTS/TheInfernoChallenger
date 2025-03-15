@@ -5819,6 +5819,7 @@ MonoBehaviour:
   moveSpeed: 8
   jumpSpeed: 20
   slowDownSpeed: 1
+  usedJumpSpeed: 20
   coyoteTime: 0.15
   jumpBufferTime: 0.2
   currentChain: {fileID: 0}

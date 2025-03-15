@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      manager = FindAnyObjectByType<UIManager>();   
+      	manager = FindAnyObjectByType<UIManager>();
     }
 
     // Update is called once per frame
@@ -17,7 +17,10 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        manager.UpdateScore(250);
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Player")) 
+        {
+          	manager.UpdateScore(250);
+          	Destroy(gameObject);
+        }
     }
 }
