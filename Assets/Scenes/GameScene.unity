@@ -5175,7 +5175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c24678d510bebf142ae03ef0f25173ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointWorldPos: {x: 38, y: -86.5, z: 0}
+  checkpointWorldPos: {x: 38, y: -89.5, z: 0}
   level: 8
   waterLevel: 1
   satanLevel: 0
@@ -5828,6 +5828,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   fireBall: {fileID: 3873245984871645703, guid: be783cabfd2ecfa45809526f3aa275f2, type: 3}
+  checkPointFlag: {fileID: 4644509083485548967, guid: ac2ee60ca2438cf4f9b8d6a2910e69f3, type: 3}
   particles: {fileID: 16875081}
   deathParticles: {fileID: 320445937}
   respawnPoint: {x: -7, y: 0.5, z: 0}
