@@ -5845,6 +5845,7 @@ MonoBehaviour:
   smallFireClip: {fileID: 8300000, guid: 3562504c24fe8d74697a42918239eba5, type: 3}
   climbClip: {fileID: 8300000, guid: 571e884ff71a01f46b3cb6b03492b5ac, type: 3}
   playerDieClip: {fileID: 8300000, guid: d745617c5fe96b849aedb7779a9625d8, type: 3}
+  checkPointClip: {fileID: 8300000, guid: 5519f70ded401d24798e5380157bf0cb, type: 3}
 --- !u!50 &135729166
 Rigidbody2D:
   serializedVersion: 5

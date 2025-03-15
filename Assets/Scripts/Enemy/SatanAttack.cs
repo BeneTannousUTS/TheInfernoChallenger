@@ -123,7 +123,7 @@ public class SatanAttack : MonoBehaviour
         satanHealth -= damage;
         slider.value = satanHealth / 30f;
         Debug.Log("Remaining health: " + satanHealth);
-        if (satanHealth <= 0)
+        if (satanHealth <= 0 && GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().isDead == false)
         {
             GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().hasWon = true;
             FindAnyObjectByType<UIManager>().WinGame();

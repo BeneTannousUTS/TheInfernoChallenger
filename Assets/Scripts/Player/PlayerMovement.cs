@@ -44,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
     bool satanLevel;
 
     [SerializeField] private Vector3 respawnPoint = new Vector3(-7f, 0.5f, 0f);
-    [SerializeField] private int furthestLevelReached = 0;
-    [SerializeField] private int currentLevel = 0;
+    [SerializeField] public int furthestLevelReached = 0;
+    [SerializeField] public int currentLevel = 0;
 
     public bool paused = false;
     public bool isDead = false;
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     bool placeFlag = false;
 
     public AudioManager audioManager;
-    [SerializeField] private AudioClip moveClip, jumpClip, fireClip, smallFireClip, climbClip, playerDieClip;
+    [SerializeField] private AudioClip moveClip, jumpClip, fireClip, smallFireClip, climbClip, playerDieClip, checkPointClip;
     private bool isRunning = false, isClimbing = false;
 
     void Start()
@@ -329,8 +329,7 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = baseGravityScale;
             if (placeFlag) 
             {
-                Destroy(GameObject.FindWithTag("Flag"));    
-                Instantiate(checkPointFlag, new Vector3(respawnPoint.x, respawnPoint.y - 0.2f, 0f), Quaternion.identity);
+                PlaceFlag(respawnPoint);
                 placeFlag = false;
             }
         }
@@ -351,17 +350,18 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator DeathAnim() 
     {
         // Call to livesManager
+        audioManager.PlaySound(playerDieClip);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<Animator>().enabled = false;
         deathParticles.Play();
         paused = true;
         if (FindAnyObjectByType<LivesManager>().lives == 1)
         {
-            FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
+            FindAnyObjectByType<LivesManager>().Respawn(respawnPoint, furthestLevelReached);
         }
         else {
             yield return new WaitForSeconds(0.7f);
-            FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
+            FindAnyObjectByType<LivesManager>().Respawn(respawnPoint, furthestLevelReached);
         }
     }
     IEnumerator MoveSound() {
@@ -374,5 +374,12 @@ public class PlayerMovement : MonoBehaviour
         audioManager.PlaySound(climbClip);
         yield return new WaitForSeconds(0.2f);
         isClimbing = false;
+    }
+
+    public void PlaceFlag(Vector3 pos) 
+    {
+        audioManager.PlaySound(checkPointClip);
+        Destroy(GameObject.FindWithTag("Flag"));
+        Instantiate(checkPointFlag, new Vector3(pos.x, pos.y - 0.2f, 0f), Quaternion.identity);
     }
 }
