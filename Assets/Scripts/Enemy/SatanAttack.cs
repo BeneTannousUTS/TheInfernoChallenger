@@ -125,6 +125,7 @@ public class SatanAttack : MonoBehaviour
         Debug.Log("Remaining health: " + satanHealth);
         if (satanHealth <= 0)
         {
+            GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().hasWon = true;
             FindAnyObjectByType<UIManager>().WinGame();
             Destroy(gameObject);
         }

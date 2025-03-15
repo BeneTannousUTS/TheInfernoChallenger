@@ -44,5 +44,14 @@ public class LivesManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         GameObject.FindWithTag("Player").transform.position = respawnPos;
         FindAnyObjectByType<UIManager>().UpdateLives(lives);
+        if (!GameObject.FindWithTag("Flag") && respawnPos.y != 0.5f) {
+            Instantiate(GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().checkPointFlag, new Vector3(respawnPos.x, respawnPos.y - 0.2f, 0f), Quaternion.identity);
+        }
+    }
+
+    public void Reset() 
+    {
+        lives = 3;
+        respawnPos = new Vector3(-7f, 0.5f, 0f);
     }
 }

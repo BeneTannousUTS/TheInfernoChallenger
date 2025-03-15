@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool paused = false;
     public bool isDead = false;
+    public bool hasWon = false;
     bool placeFlag = false;
 
     public AudioManager audioManager;
@@ -268,7 +269,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision) 
     {
-        if (collision.gameObject.CompareTag("FirePit") && collision.gameObject.GetComponent<FirePit>().canDamage && !isDead) 
+        if (collision.gameObject.CompareTag("FirePit") && collision.gameObject.GetComponent<FirePit>().canDamage && !isDead && !hasWon) 
         {
             isDead = true;
             Die();
@@ -281,7 +282,7 @@ public class PlayerMovement : MonoBehaviour
         {
             collider.gameObject.transform.parent.gameObject.GetComponent<SwingingChain>().AttachPlayer(gameObject);
         }
-        else if (collider.gameObject.CompareTag("Enemy") && !isDead) //Add enemy tag and any other obstacle tags 
+        else if (collider.gameObject.CompareTag("Enemy") && !isDead && !hasWon) //Add enemy tag and any other obstacle tags 
         {
             isDead = true;
             Die();

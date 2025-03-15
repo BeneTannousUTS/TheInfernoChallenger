@@ -32,7 +32,7 @@ public class SatanFireBall : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Satan") && !collision.gameObject.CompareTag("CameraSnapPos") && !collision.gameObject.CompareTag("FireBall"))
         {
-            if (collision.gameObject.CompareTag("Player") && !collision.gameObject.GetComponent<PlayerMovement>().isDead)
+            if (collision.gameObject.CompareTag("Player") && !collision.gameObject.GetComponent<PlayerMovement>().isDead && !collision.gameObject.GetComponent<PlayerMovement>().hasWon)
             {
                 collision.gameObject.GetComponent<PlayerMovement>().isDead = true;
                 collision.gameObject.GetComponent<PlayerMovement>().Die();

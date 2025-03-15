@@ -76,6 +76,7 @@ public class UIManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        FindAnyObjectByType<LivesManager>().Reset();
         SceneManager.LoadScene(0);
     }
 }
