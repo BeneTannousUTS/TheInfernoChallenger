@@ -30,7 +30,7 @@ public class FireBall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("CameraSnapPos") && !collision.gameObject.CompareTag("FireBall") && !collision.gameObject.CompareTag("Coin") && !collision.gameObject.CompareTag("Ladder"))
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("CameraSnapPos") && !collision.gameObject.CompareTag("FireBall") && !collision.gameObject.CompareTag("Coin") && !collision.gameObject.CompareTag("Ladder") && !collision.gameObject.name.Equals("ChainRope"))
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
@@ -39,7 +39,7 @@ public class FireBall : MonoBehaviour
             }
             if (collision.gameObject.CompareTag("Satan"))
             {
-                collision.gameObject.GetComponent<SatanAttack>().takeDamage();
+                collision.gameObject.GetComponent<SatanAttack>().takeDamage(1f);
             }
             Destroy(gameObject);
         }

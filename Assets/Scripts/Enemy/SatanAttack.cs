@@ -7,7 +7,7 @@ public class SatanAttack : MonoBehaviour
     public GameObject fireBall;
     private bool attacking = false;
     public bool active = false;
-    private float satanHealth = 30;
+    private float satanHealth = 30f;
     public Slider slider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -118,12 +118,12 @@ public class SatanAttack : MonoBehaviour
         attacking = false;
     }
 
-    public void takeDamage()
+    public void takeDamage(float damage)
     {
-        satanHealth -= 1;
+        satanHealth -= damage;
         slider.value = satanHealth / 30f;
         Debug.Log("Remaining health: " + satanHealth);
-        if (satanHealth == 0)
+        if (satanHealth <= 0)
         {
             FindAnyObjectByType<UIManager>().WinGame();
             Destroy(gameObject);

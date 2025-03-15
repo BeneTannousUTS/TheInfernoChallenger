@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         if (xInput != 0)
         {
-            if (!isRunning) {
+            if (!isRunning && !onLadder && !currentChain && rb.linearVelocityY == 0f) {
                 StartCoroutine(MoveSound());
                 isRunning = true;
             }
@@ -102,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
             }
         } else
         {
-            isRunning = false;
             int dir = (int) Mathf.Sign(rb.linearVelocityX);
 
             if (dir > 0)
@@ -219,6 +218,7 @@ public class PlayerMovement : MonoBehaviour
         if (paused) 
         {
             rb.linearVelocityX = 0f;
+            rb.linearVelocityY = 0f;
         }
     }
 
@@ -362,8 +362,6 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator MoveSound() {
         audioManager.PlaySound(moveClip);
         yield return new WaitForSeconds(0.2f);
-        if (isRunning) {
-            yield return MoveSound();
-        }
+        isRunning = false;
     }
 }
