@@ -46,6 +46,10 @@ public class PlayerMovement : MonoBehaviour
     public bool paused = false;
     public bool isDead = false;
 
+    public AudioManager audioManager;
+    [SerializeField] private AudioClip moveClip, jumpClip, fireClip;
+    private bool isRunning = false;
+
     void Start()
     {
         Application.targetFrameRate = 60; // JUST FOR TESTING THIS CAN BE REMOVED LATER
@@ -74,6 +78,11 @@ public class PlayerMovement : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         if (xInput != 0)
         {
+            if (!isRunning) {
+                StartCoroutine(MoveSound());
+                isRunning = true;
+            }
+            
             if (xInput > 0)
             {
                 facingLeft = false;
@@ -88,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
             }
         } else
         {
+            isRunning = false;
             int dir = (int) Mathf.Sign(rb.linearVelocityX);
 
             if (dir > 0)
@@ -149,6 +159,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetTrigger("Jump");
             rb.linearVelocityY = usedJumpSpeed;
+            audioManager.PlaySound(jumpClip);
             jumpBufferTimer = 0;
             coyoteTimer = 0;
         }
@@ -214,6 +225,7 @@ public class PlayerMovement : MonoBehaviour
                 canFire = false;
                 fireCount -= 1;
                 fireTimer = 0;
+                audioManager.PlaySound(fireClip);
         }
     }
 
@@ -303,6 +315,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
             }
+        }
+    }
+    IEnumerator MoveSound() {
+        audioManager.PlaySound(moveClip);
+        yield return new WaitForSeconds(0.2f);
+        if (isRunning) {
+            yield return MoveSound();
         }
     }
 }
