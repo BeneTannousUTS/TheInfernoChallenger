@@ -44,6 +44,10 @@ public class PlayerMovement : MonoBehaviour
     public bool paused = false;
     public bool isDead = false;
 
+    public AudioManager audioManager;
+    [SerializeField] private AudioClip moveClip, jumpClip, fireClip;
+    private bool isRunning = false;
+
     void Start()
     {
         Application.targetFrameRate = 60; // JUST FOR TESTING THIS CAN BE REMOVED LATER
@@ -72,6 +76,11 @@ public class PlayerMovement : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         if (xInput != 0)
         {
+            if (!isRunning) {
+                StartCoroutine(MoveSound());
+                isRunning = true;
+            }
+            
             if (xInput > 0)
             {
                 facingLeft = false;
@@ -86,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
             }
         } else
         {
+            isRunning = false;
             int dir = (int) Mathf.Sign(rb.linearVelocityX);
 
             if (dir > 0)
@@ -146,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
         if (jumpBufferTimer > 0 && coyoteTimer > 0 && !currentChain && !onLadder)
         {
             anim.SetTrigger("Jump");
+            audioManager.PlaySound(jumpClip);
             rb.linearVelocityY = jumpSpeed;
             jumpBufferTimer = 0;
             coyoteTimer = 0;
@@ -212,6 +223,7 @@ public class PlayerMovement : MonoBehaviour
                 canFire = false;
                 fireCount -= 1;
                 fireTimer = 0;
+                audioManager.PlaySound(fireClip);
         }
     }
 
@@ -285,5 +297,13 @@ public class PlayerMovement : MonoBehaviour
         GameObject.FindWithTag("BackWall").GetComponent<BoxCollider2D>().enabled = true;
         yield return new WaitForSeconds(2f);
         GameObject.FindWithTag("Satan").GetComponent<SatanAttack>().active = true;
+    }
+
+    IEnumerator MoveSound() {
+        audioManager.PlaySound(moveClip);
+        yield return new WaitForSeconds(0.2f);
+        if (isRunning) {
+            yield return MoveSound();
+        }
     }
 }
