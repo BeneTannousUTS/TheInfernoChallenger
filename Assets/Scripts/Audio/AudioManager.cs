@@ -4,6 +4,8 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource effectSource;
+
+    [SerializeField] private AudioClip buttonClickClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,5 +33,9 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string clip) {
         
+    }
+
+    public void PlayClickSound() {
+        effectSource.PlayOneShot(buttonClickClip);
     }
 }
