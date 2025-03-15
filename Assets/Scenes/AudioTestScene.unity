@@ -5845,6 +5845,7 @@ MonoBehaviour:
   smallFireClip: {fileID: 8300000, guid: 3562504c24fe8d74697a42918239eba5, type: 3}
   climbClip: {fileID: 8300000, guid: 571e884ff71a01f46b3cb6b03492b5ac, type: 3}
   playerDieClip: {fileID: 8300000, guid: d745617c5fe96b849aedb7779a9625d8, type: 3}
+  checkPointClip: {fileID: 0}
 --- !u!50 &135729166
 Rigidbody2D:
   serializedVersion: 5
@@ -48068,9 +48069,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -48166,6 +48167,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1641351461}
   effectSource: {fileID: 1641351460}
+  buttonClickClip: {fileID: 8300000, guid: 5d0b053f4e89e6d4bba1b0f498f2a501, type: 3}
+  menuMusic: {fileID: 8300000, guid: 818ff44912e6ffd46a24d67abdae06af, type: 3}
+  gameMusic: {fileID: 8300000, guid: a4df2550b2719f848bbb1ff577bb13ec, type: 3}
+  bossMusic: {fileID: 8300000, guid: 690613f3d2fe6d84a8a7a605c3aaee86, type: 3}
 --- !u!4 &1641351463
 Transform:
   m_ObjectHideFlags: 0
@@ -48220,6 +48225,9 @@ MonoBehaviour:
   lives: {fileID: 844135536}
   level: {fileID: 139494754}
   wall: {fileID: 1125963568}
+  audioManager: {fileID: 1641351462}
+  winClip: {fileID: 8300000, guid: 1a1d98417d360f845b0da147263b4d02, type: 3}
+  loseClip: {fileID: 8300000, guid: feb1c321d2e9c5d40849e4b1e4c8b690, type: 3}
 --- !u!4 &1651831105
 Transform:
   m_ObjectHideFlags: 0
@@ -50606,6 +50614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   respawnPos: {x: -7, y: 0.5, z: 0}
+  furthestLevel: 0
 --- !u!1 &1987743990
 GameObject:
   m_ObjectHideFlags: 0

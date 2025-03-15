@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     private int minutes;
     private float timeTracker;
     public GameObject wall;
+    public AudioManager audioManager;
+    public AudioClip winClip, loseClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -65,6 +67,7 @@ public class UIManager : MonoBehaviour
         winScore.text = ("Score: " + string.Format("{0:0000000}", score));
         winTimer.text = ("Time: " + string.Format("{0:00}:{1:00}", minutes, seconds));
         GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().paused = true;
+        audioManager.PlaySound(winClip);
     }
 
     public void LoseGame()
@@ -72,6 +75,7 @@ public class UIManager : MonoBehaviour
         gameCanvas.gameObject.SetActive (false);
         loseCanvas.gameObject.SetActive(true);
         GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().paused = true;
+        audioManager.PlaySound(loseClip);
     }
 
     public void ReturnToMenu()

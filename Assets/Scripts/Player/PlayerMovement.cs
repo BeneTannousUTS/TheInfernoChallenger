@@ -342,6 +342,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator StartBoss() 
     {
+        audioManager.ChangeMusic("Boss");
         GameObject.FindWithTag("BackWall").GetComponent<BoxCollider2D>().enabled = true;
         yield return new WaitForSeconds(2f);
         GameObject.FindWithTag("Satan").GetComponent<SatanAttack>().active = true;
