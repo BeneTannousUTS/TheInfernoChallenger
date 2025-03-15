@@ -5,6 +5,7 @@ public class EnemyBase : MonoBehaviour
 {
     public float moveSpeed = 2f;
     public int points = 200;
+    public float health = 1f;
     
     private Rigidbody2D rb;
     private Animator anim;
@@ -12,6 +13,7 @@ public class EnemyBase : MonoBehaviour
     private bool movingRight = false;
     public bool isAttacking = false;
     private UIManager uiManager;
+    public bool active;
     
     public bool IsFlipping { get; private set; } = false;
     public float flipCooldown = 0.5f;
@@ -29,16 +31,18 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.linearVelocityX > 0)
-        {
-            sr.flipX = true;
-        }else if (rb.linearVelocityX < 0)
-        {
-            sr.flipX = false;
-        }
-        if (!isAttacking)
-        {
-            Move();
+        if (active) {
+            if (rb.linearVelocityX > 0)
+            {
+                sr.flipX = true;
+            }else if (rb.linearVelocityX < 0)
+            {
+                sr.flipX = false;
+            }
+            if (!isAttacking)
+            {
+                Move();
+            }
         }
     }
 
@@ -74,10 +78,22 @@ public class EnemyBase : MonoBehaviour
         IsFlipping = false;
     }
 
-    public void Die()
+    public void TakeDamage(float damage) 
     {
-        uiManager.UpdateScore(points);
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlaySound(deathAudio);
-        Destroy(gameObject);
+        health -= damage;
+        StartCoroutine(Flash());
+        if (health <= 0)
+        {
+            uiManager.UpdateScore(points);
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().PlaySound(deathAudio);
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator Flash()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        yield return new WaitForSeconds(0.05f);
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

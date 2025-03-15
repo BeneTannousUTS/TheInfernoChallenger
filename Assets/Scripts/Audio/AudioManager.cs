@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Main Menu") {
+        if (SceneManager.GetActiveScene().name == "MainMenu") {
             ChangeMusic("Menu");
         }
         else {

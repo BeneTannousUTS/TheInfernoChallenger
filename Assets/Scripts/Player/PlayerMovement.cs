@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     bool waterLevel;
     bool satanLevel;
 
-    [SerializeField] private Vector3 respawnPoint = new Vector3(-7f, 0.5f, 0f);
+    [SerializeField] public Vector3 respawnPoint = new Vector3(-7f, 0.5f, 0f);
     [SerializeField] public int furthestLevelReached = 0;
     [SerializeField] public int currentLevel = 0;
 
@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Debug.Log("jumptime: " + jumpBufferTimer + "|| coyotime: " + coyoteTimer);
 
-        if (jumpBufferTimer > 0 && coyoteTimer > 0 && !currentChain && !onLadder)
+        if (jumpBufferTimer > 0 && coyoteTimer > 0 && !currentChain && !onLadder && !isDead && !hasWon)
         {
             anim.SetTrigger("Jump");
             rb.linearVelocityY = usedJumpSpeed;
@@ -229,7 +229,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FireBall()
     {
-        if (canFire)
+        if (canFire && !isDead && !hasWon)
         {
                 GameObject projectile;
                 if (facingLeft)
@@ -252,7 +252,7 @@ public class PlayerMovement : MonoBehaviour
 
     void SmallShot() 
     {
-        if (canFireSmall)
+        if (canFireSmall && !isDead && !hasWon)
         {
             GameObject projectile;
             if (facingLeft)
@@ -293,10 +293,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collider.gameObject.CompareTag("CameraSnapPos")) {
             mainCamera.transform.position = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, -10f);
+            collider.gameObject.GetComponent<CheckpointScript>().activate();
             currentLevel = collider.gameObject.GetComponent<CheckpointScript>().level;
             waterLevel = collider.gameObject.GetComponent<CheckpointScript>().waterLevel;
             satanLevel = collider.gameObject.GetComponent<CheckpointScript>().satanLevel;
-            if (waterLevel) 
+            if (waterLevel)
             {
                 rb.gravityScale = 0.5f*baseGravityScale;
                 usedJumpSpeed = 0.7f*jumpSpeed;

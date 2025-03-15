@@ -19,6 +19,7 @@ public class SatanFireBall : MonoBehaviour
             if (rb.linearVelocityX > 10f) {
                 rb.linearVelocityX = 10f;
             }
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
         else
         {
@@ -26,6 +27,7 @@ public class SatanFireBall : MonoBehaviour
             if (rb.linearVelocityX < -10f) {
                 rb.linearVelocityX = -10f;
             }
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -19,6 +19,7 @@ public class FireBall : MonoBehaviour
             if (rb.linearVelocityX > 10f) {
                 rb.linearVelocityX = 10f;
             }
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
         else
         {
@@ -26,6 +27,7 @@ public class FireBall : MonoBehaviour
             if (rb.linearVelocityX < -10f) {
                 rb.linearVelocityX = -10f;
             }
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,7 +36,7 @@ public class FireBall : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                collision.GetComponent<EnemyBase>().Die();
+                collision.GetComponent<EnemyBase>().TakeDamage(1f);
             }
             if (collision.gameObject.CompareTag("Satan"))
             {

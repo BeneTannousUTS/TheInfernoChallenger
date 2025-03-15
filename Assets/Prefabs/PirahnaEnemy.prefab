@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   points: 200
+  health: 1
   isAttacking: 0
   flipCooldown: 0.5
   deathAudio: {fileID: 8300000, guid: 38cbbc1a9ae16654e97347214b67d50e, type: 3}
@@ -124,7 +125,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 6554660598349768955, guid: 5f09b88709da10746ab1e9a245cfa14e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

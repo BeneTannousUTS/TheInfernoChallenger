@@ -49,6 +49,15 @@ public class UIManager : MonoBehaviour
         timerTxt.text = ("Time: " + string.Format("{0:00}:{1:00}", minutes, seconds));
     }
 
+    public void SetTimer(float time)
+    {
+        timeTracker = time;
+    }
+
+    public float GetTimer() {
+        return timeTracker;
+    }
+
     public void UpdateLevel(int newLevel) 
     {
         level.text = $"Level: {newLevel}";

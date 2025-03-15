@@ -24,6 +24,6 @@ public class MainMenuManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Game Started");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

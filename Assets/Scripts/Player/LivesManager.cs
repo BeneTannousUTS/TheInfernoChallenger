@@ -7,6 +7,7 @@ public class LivesManager : MonoBehaviour
     [SerializeField] Vector3 respawnPos = new Vector3(-7f, 0.5f, 0f);
     public int furthestLevel = 0;
     private static LivesManager instance;
+    private float storedTime = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -31,7 +32,8 @@ public class LivesManager : MonoBehaviour
         furthestLevel = level;
         if (lives != 0)
         {
-            SceneManager.LoadScene(0);
+            storedTime = FindAnyObjectByType<UIManager>().GetTimer();
+            SceneManager.LoadScene(1);
             respawnPos = spawnPos;
         }
         else 
@@ -39,18 +41,25 @@ public class LivesManager : MonoBehaviour
             lives = 3;
             respawnPos = new Vector3(-7f, 0.5f, 0f);
             furthestLevel = 0;
+            storedTime = 0f;
             FindAnyObjectByType<UIManager>().LoseGame();
             FindAnyObjectByType<UIManager>().UpdateLives(0);
         }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        GameObject.FindWithTag("Player").transform.position = respawnPos;
-        FindAnyObjectByType<UIManager>().UpdateLives(lives);
+        if (GameObject.FindWithTag("Player")) {
+            GameObject.FindWithTag("Player").transform.position = respawnPos;
+        }
+        if (FindAnyObjectByType<UIManager>()) {
+            FindAnyObjectByType<UIManager>().UpdateLives(lives);
+            FindAnyObjectByType<UIManager>().SetTimer(storedTime);
+        }
         if (respawnPos.y != 0.5f) {
             GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().PlaceFlag(respawnPos);
             GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().furthestLevelReached = furthestLevel;
             GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().currentLevel = furthestLevel;
+            GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().respawnPoint = respawnPos;
         }
     }
 
@@ -59,5 +68,6 @@ public class LivesManager : MonoBehaviour
         lives = 3;
         respawnPos = new Vector3(-7f, 0.5f, 0f);
         furthestLevel = 0;
+        storedTime = 0f;
     }
 }

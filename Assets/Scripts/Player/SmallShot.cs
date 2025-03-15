@@ -28,7 +28,7 @@ public class SmallShot : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                collision.GetComponent<EnemyBase>().Die();
+                collision.GetComponent<EnemyBase>().TakeDamage(0.3f);
             }
             if (collision.gameObject.CompareTag("Satan"))
             {

@@ -9,6 +9,7 @@ public class SatanAttack : MonoBehaviour
     public bool active = false;
     private float satanHealth = 30f;
     public Slider slider;
+    public Animator anim;
     public AudioManager audioManager;
     [SerializeField] private AudioClip fireClip, hurtClip, deathClip;
 
@@ -58,13 +59,13 @@ public class SatanAttack : MonoBehaviour
         GameObject projectile2;
         GameObject projectile3;
         audioManager.PlaySound(fireClip);
-        projectile = Instantiate(fireBall, transform.position + Vector3.left*2, transform.rotation);
+        projectile = Instantiate(fireBall, transform.position + Vector3.left*2 + Vector3.down*0.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
         audioManager.PlaySound(fireClip);
-        projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1.5f, transform.rotation);
+        projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1f, transform.rotation);
         yield return new WaitForSeconds(1f);
         audioManager.PlaySound(fireClip);
-        projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
+        projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.down*0.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
         attacking = false;
     }
@@ -77,13 +78,13 @@ public class SatanAttack : MonoBehaviour
         GameObject projectile2;
         GameObject projectile3;
         audioManager.PlaySound(fireClip);
-        projectile = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
+        projectile = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.down*0.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
         audioManager.PlaySound(fireClip);
-        projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
+        projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.down*0.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
         audioManager.PlaySound(fireClip);
-        projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
+        projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.down*0.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
         attacking = false;
     }
@@ -96,13 +97,13 @@ public class SatanAttack : MonoBehaviour
         GameObject projectile2;
         GameObject projectile3;
         audioManager.PlaySound(fireClip);
-        projectile = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
+        projectile = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.down*0.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
         audioManager.PlaySound(fireClip);
-        projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
+        projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.down*0.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
         audioManager.PlaySound(fireClip);
-        projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up*1.5f, transform.rotation);
+        projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up*1f, transform.rotation);
         yield return new WaitForSeconds(1f);
         attacking = false;
     }
@@ -115,13 +116,13 @@ public class SatanAttack : MonoBehaviour
         GameObject projectile2;
         GameObject projectile3;
         audioManager.PlaySound(fireClip);
-        projectile = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1.5f, transform.rotation);
+        projectile = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1f, transform.rotation);
         yield return new WaitForSeconds(1f);
         audioManager.PlaySound(fireClip);
-        projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1.5f, transform.rotation);
+        projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1f, transform.rotation);
         yield return new WaitForSeconds(1f);
         audioManager.PlaySound(fireClip);
-        projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1.5f, transform.rotation);
+        projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1f, transform.rotation);
         yield return new WaitForSeconds(1f);
         attacking = false;
     }
@@ -133,20 +134,37 @@ public class SatanAttack : MonoBehaviour
         attacking = false;
     }
 
+    IEnumerator Flash()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        yield return new WaitForSeconds(0.05f);
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
     public void takeDamage(float damage)
     {
         satanHealth -= damage;
         slider.value = satanHealth / 30f;
         Debug.Log("Remaining health: " + satanHealth);
         audioManager.PlaySound(hurtClip);
+        StartCoroutine(Flash());
         if (satanHealth <= 0)
         {
+            anim.SetTrigger("isDead");
             audioManager.PlaySound(deathClip);
             GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().hasWon = true;
-            if (GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().isDead == false) {
-                FindAnyObjectByType<UIManager>().WinGame();
-            }
-            Destroy(gameObject);
+            StartCoroutine(Die());
         }
+    }
+
+    IEnumerator Die() 
+    {
+        active = false;
+        yield return new WaitForSeconds(3f);
+        if (GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().isDead == false) {
+            FindAnyObjectByType<UIManager>().WinGame();
+        }
+        Destroy(gameObject);
+
     }
 }

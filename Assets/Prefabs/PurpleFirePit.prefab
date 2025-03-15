@@ -152,7 +152,7 @@ MonoBehaviour:
   changeTime: 6
   sprites:
   - {fileID: 21300000, guid: a1dfc251f9eb340e39385efb4da2ef2c, type: 3}
-  - {fileID: 21300000, guid: 7a7dd65080f8441e89afbb86b67f19d1, type: 3}
+  - {fileID: -1844022291618998653, guid: 4cbca650b675716488c29677fb43ba1e, type: 3}
   sprite: {fileID: 8525632799461440909}
 --- !u!95 &6694001742600257361
 Animator:
