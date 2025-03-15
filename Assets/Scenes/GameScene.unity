@@ -5837,11 +5837,14 @@ MonoBehaviour:
   currentLevel: 0
   paused: 0
   isDead: 0
+  hasWon: 0
   audioManager: {fileID: 361239835}
   moveClip: {fileID: 8300000, guid: 3d02755bcd2d1fa4895b655919713b5c, type: 3}
-  jumpClip: {fileID: 0}
-  fireClip: {fileID: 0}
-  smallFireClip: {fileID: 0}
+  jumpClip: {fileID: 8300000, guid: 7e0dc4d8a6809354ab7740351144fc42, type: 3}
+  fireClip: {fileID: 8300000, guid: 4f92bacff906b9849bdba1d381173d1f, type: 3}
+  smallFireClip: {fileID: 8300000, guid: 3562504c24fe8d74697a42918239eba5, type: 3}
+  climbClip: {fileID: 8300000, guid: 571e884ff71a01f46b3cb6b03492b5ac, type: 3}
+  playerDieClip: {fileID: 8300000, guid: d745617c5fe96b849aedb7779a9625d8, type: 3}
 --- !u!50 &135729166
 Rigidbody2D:
   serializedVersion: 5
@@ -13441,6 +13444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 361239834}
   effectSource: {fileID: 361239833}
+  buttonClickClip: {fileID: 0}
 --- !u!4 &361239836
 Transform:
   m_ObjectHideFlags: 0
