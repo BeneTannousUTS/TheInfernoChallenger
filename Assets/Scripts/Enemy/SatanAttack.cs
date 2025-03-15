@@ -9,6 +9,9 @@ public class SatanAttack : MonoBehaviour
     public bool active = false;
     private float satanHealth = 30f;
     public Slider slider;
+    public AudioManager audioManager;
+    [SerializeField] private AudioClip fireClip, hurtClip, deathClip;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -54,10 +57,13 @@ public class SatanAttack : MonoBehaviour
         GameObject projectile;
         GameObject projectile2;
         GameObject projectile3;
+        audioManager.PlaySound(fireClip);
         projectile = Instantiate(fireBall, transform.position + Vector3.left*2, transform.rotation);
         yield return new WaitForSeconds(1f);
+        audioManager.PlaySound(fireClip);
         projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
+        audioManager.PlaySound(fireClip);
         projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
         yield return new WaitForSeconds(1f);
         attacking = false;
@@ -70,10 +76,13 @@ public class SatanAttack : MonoBehaviour
         GameObject projectile;
         GameObject projectile2;
         GameObject projectile3;
+        audioManager.PlaySound(fireClip);
         projectile = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
         yield return new WaitForSeconds(1f);
+        audioManager.PlaySound(fireClip);
         projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
         yield return new WaitForSeconds(1f);
+        audioManager.PlaySound(fireClip);
         projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
         yield return new WaitForSeconds(1f);
         attacking = false;
@@ -86,10 +95,13 @@ public class SatanAttack : MonoBehaviour
         GameObject projectile;
         GameObject projectile2;
         GameObject projectile3;
+        audioManager.PlaySound(fireClip);
         projectile = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
         yield return new WaitForSeconds(1f);
+        audioManager.PlaySound(fireClip);
         projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2, transform.rotation);
         yield return new WaitForSeconds(1f);
+        audioManager.PlaySound(fireClip);
         projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up*1.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
         attacking = false;
@@ -102,10 +114,13 @@ public class SatanAttack : MonoBehaviour
         GameObject projectile;
         GameObject projectile2;
         GameObject projectile3;
+        audioManager.PlaySound(fireClip);
         projectile = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
+        audioManager.PlaySound(fireClip);
         projectile2 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
+        audioManager.PlaySound(fireClip);
         projectile3 = Instantiate(fireBall, transform.position + Vector3.left * 2 + Vector3.up * 1.5f, transform.rotation);
         yield return new WaitForSeconds(1f);
         attacking = false;
@@ -123,10 +138,14 @@ public class SatanAttack : MonoBehaviour
         satanHealth -= damage;
         slider.value = satanHealth / 30f;
         Debug.Log("Remaining health: " + satanHealth);
-        if (satanHealth <= 0 && GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().isDead == false)
+        audioManager.PlaySound(hurtClip);
+        if (satanHealth <= 0)
         {
+            audioManager.PlaySound(deathClip);
             GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().hasWon = true;
-            FindAnyObjectByType<UIManager>().WinGame();
+            if (GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().isDead == false) {
+                FindAnyObjectByType<UIManager>().WinGame();
+            }
             Destroy(gameObject);
         }
     }

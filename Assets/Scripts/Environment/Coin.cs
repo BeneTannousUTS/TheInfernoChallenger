@@ -3,6 +3,9 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     private UIManager manager;
+    public AudioManager audioManager;
+    [SerializeField] private AudioClip collectClip; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +22,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")) 
         {
+            audioManager.PlaySound(collectClip);
           	manager.UpdateScore(250);
           	Destroy(gameObject);
         }
