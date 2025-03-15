@@ -14,6 +14,7 @@ public class BatAttack : MonoBehaviour
     private bool isAttacking = false;
     private float originalHeight;
     private Vector2 swoopTarget;
+    public AudioClip swoopAudio;
 
     void Start()
     {
@@ -41,6 +42,8 @@ public class BatAttack : MonoBehaviour
 
             Vector2 startPos = transform.position;
             swoopTarget = player.position;
+            
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().PlaySound(swoopAudio);
             
             // Swoop towards player
             float t = 0;
