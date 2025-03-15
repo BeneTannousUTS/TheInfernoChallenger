@@ -27,12 +27,15 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimer = 0f;
     private float jumpBufferTimer = 0f;
     public GameObject fireBall;
+    public GameObject smallShot;
     public GameObject checkPointFlag;
     private float fireTimer = 5;
     private float turnTimer = 0;
     private int fireCount = 2;
     private bool canFire = true;
     private bool fireWait = false;
+    private bool canFireSmall = true;
+    private float shotTimer = 5f;
     public ParticleSystem particles;
     public ParticleSystem deathParticles;
     private bool facingLeft = false;
@@ -49,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     bool placeFlag = false;
 
     public AudioManager audioManager;
-    [SerializeField] private AudioClip moveClip, jumpClip, fireClip;
+    [SerializeField] private AudioClip moveClip, jumpClip, fireClip, smallFireClip;
     private bool isRunning = false;
 
     void Start()
@@ -181,6 +184,11 @@ public class PlayerMovement : MonoBehaviour
             FireBall();
         }
 
+        if (Input.GetKey("left shift"))
+        {
+            SmallShot();
+        }
+
         if (!canFire)
         {
             fireTimer += Time.deltaTime;
@@ -198,6 +206,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 turnTimer = 0;
                 fireCount = 2;
+            }
+        }
+
+        if (!canFireSmall) {
+            shotTimer += Time.deltaTime;
+            if (shotTimer > 0.2f) {
+                canFireSmall = true;
             }
         }
 
@@ -227,6 +242,27 @@ public class PlayerMovement : MonoBehaviour
                 fireCount -= 1;
                 fireTimer = 0;
                 audioManager.PlaySound(fireClip);
+        }
+    }
+
+    void SmallShot() 
+    {
+        if (canFireSmall)
+        {
+            GameObject projectile;
+            if (facingLeft)
+            {
+                projectile = Instantiate(smallShot, transform.position + Vector3.left, transform.rotation);
+                projectile.GetComponent<SmallShot>().facingRight = false;
+            }
+            else
+            {
+                projectile = Instantiate(smallShot, transform.position + Vector3.right, transform.rotation);
+                projectile.GetComponent<SmallShot>().facingRight = true;
+            }
+            canFireSmall = false;
+            shotTimer = 0;
+            audioManager.PlaySound(smallFireClip);
         }
     }
 
