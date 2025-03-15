@@ -15,6 +15,7 @@ public class EnemyBase : MonoBehaviour
     
     public bool IsFlipping { get; private set; } = false;
     public float flipCooldown = 0.5f;
+    public AudioClip deathAudio;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -57,11 +58,6 @@ public class EnemyBase : MonoBehaviour
     {
         isAttacking = attacking;
     }
-
-    public void AwardPoints()
-    {
-        uiManager.UpdateScore(points);
-    }
     
     public void StartFlipCooldown()
     {
@@ -76,5 +72,12 @@ public class EnemyBase : MonoBehaviour
         IsFlipping = true;
         yield return new WaitForSeconds(flipCooldown);
         IsFlipping = false;
+    }
+
+    public void Die()
+    {
+        uiManager.UpdateScore(points);
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlaySound(deathAudio);
+        Destroy(gameObject);
     }
 }

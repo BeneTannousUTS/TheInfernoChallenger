@@ -13446,6 +13446,9 @@ MonoBehaviour:
   musicSource: {fileID: 361239834}
   effectSource: {fileID: 361239833}
   buttonClickClip: {fileID: 0}
+  menuMusic: {fileID: 0}
+  gameMusic: {fileID: 0}
+  bossMusic: {fileID: 0}
 --- !u!4 &361239836
 Transform:
   m_ObjectHideFlags: 0
@@ -53060,6 +53063,9 @@ MonoBehaviour:
   lives: {fileID: 844135536}
   level: {fileID: 139494754}
   wall: {fileID: 1125963568}
+  audioManager: {fileID: 0}
+  winClip: {fileID: 0}
+  loseClip: {fileID: 0}
 --- !u!4 &1651831105
 Transform:
   m_ObjectHideFlags: 0
@@ -55446,6 +55452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   respawnPos: {x: -7, y: 0.5, z: 0}
+  furthestLevel: 0
 --- !u!1 &1987743990
 GameObject:
   m_ObjectHideFlags: 0

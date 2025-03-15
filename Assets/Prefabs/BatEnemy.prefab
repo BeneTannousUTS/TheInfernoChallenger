@@ -52,6 +52,7 @@ MonoBehaviour:
   points: 200
   isAttacking: 0
   flipCooldown: 0.5
+  deathAudio: {fileID: 8300000, guid: 8a2089ff4ccfe334b8e15647ee0708d1, type: 3}
 --- !u!50 &3413388616418468911
 Rigidbody2D:
   serializedVersion: 5
