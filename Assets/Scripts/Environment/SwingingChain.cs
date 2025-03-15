@@ -12,7 +12,7 @@ public class SwingingChain : MonoBehaviour
     
     void Update()
     {
-        transform.Rotate(0,0,swingVelocity);
+        transform.Rotate(0,0,swingVelocity*Time.deltaTime);
 
         float zRot = transform.rotation.eulerAngles.z > 180f ? transform.rotation.eulerAngles.z - 360: transform.rotation.eulerAngles.z;
 
