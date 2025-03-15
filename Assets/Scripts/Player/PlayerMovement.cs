@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canFire = true;
     private bool fireWait = false;
     public ParticleSystem particles;
+    public ParticleSystem deathParticles;
     private bool facingLeft = false;
 
     bool waterLevel;
@@ -276,11 +277,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die()
     {
-        // Call to livesManager
-        if (!paused) 
-        {
-            FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
-        }
+        StartCoroutine(DeathAnim());
     }
 
     IEnumerator StartBoss() 
@@ -288,5 +285,24 @@ public class PlayerMovement : MonoBehaviour
         GameObject.FindWithTag("BackWall").GetComponent<BoxCollider2D>().enabled = true;
         yield return new WaitForSeconds(2f);
         GameObject.FindWithTag("Satan").GetComponent<SatanAttack>().active = true;
+    }
+
+    IEnumerator DeathAnim() 
+    {
+        // Call to livesManager
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<Animator>().enabled = false;
+        deathParticles.Play();
+        if (!paused && FindAnyObjectByType<LivesManager>().lives == 1) 
+        {
+            FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
+        }
+        else {
+            yield return new WaitForSeconds(0.7f);
+            if (!paused) 
+            {
+                FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
+            }
+        }
     }
 }

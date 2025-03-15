@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class LivesManager : MonoBehaviour
 {
-    [SerializeField] int lives = 3;
+    [SerializeField] public int lives = 3;
     [SerializeField] Vector3 respawnPos = new Vector3(-7f, 0.5f, 0f);
     private static LivesManager instance;
 
