@@ -53,8 +53,8 @@ public class PlayerMovement : MonoBehaviour
     bool placeFlag = false;
 
     public AudioManager audioManager;
-    [SerializeField] private AudioClip moveClip, jumpClip, fireClip, smallFireClip;
-    private bool isRunning = false;
+    [SerializeField] private AudioClip moveClip, jumpClip, fireClip, smallFireClip, climbClip, playerDieClip;
+    private bool isRunning = false, isClimbing = false;
 
     void Start()
     {
@@ -139,6 +139,10 @@ public class PlayerMovement : MonoBehaviour
         if (onLadder) {
             rb.linearVelocityY = yDir*moveSpeed;
             rb.linearVelocityX = 0f;
+            if (!isClimbing) {
+                StartCoroutine(ClimbSound());
+                isClimbing = true;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -362,7 +366,13 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator MoveSound() {
         audioManager.PlaySound(moveClip);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         isRunning = false;
+    }
+
+    IEnumerator ClimbSound() {
+        audioManager.PlaySound(climbClip);
+        yield return new WaitForSeconds(0.2f);
+        isClimbing = false;
     }
 }
