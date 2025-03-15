@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimer = 0f;
     private float jumpBufferTimer = 0f;
     public GameObject fireBall;
+    public GameObject checkPointFlag;
     private float fireTimer = 5;
     private float turnTimer = 0;
     private int fireCount = 2;
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool paused = false;
     public bool isDead = false;
+    bool placeFlag = false;
 
     public AudioManager audioManager;
     [SerializeField] private AudioClip moveClip, jumpClip, fireClip;
@@ -202,7 +204,6 @@ public class PlayerMovement : MonoBehaviour
         if (paused) 
         {
             rb.linearVelocityX = 0f;
-            rb.linearVelocityY = 0f;
         }
     }
 
@@ -273,6 +274,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 furthestLevelReached = collider.gameObject.GetComponent<CheckpointScript>().level;
                 respawnPoint = collider.gameObject.GetComponent<CheckpointScript>().checkpointWorldPos;
+                placeFlag = true;
             }
         }
     }
@@ -284,6 +286,12 @@ public class PlayerMovement : MonoBehaviour
             collider.gameObject.GetComponent<BoxCollider2D>().enabled = true;
             onLadder = false;
             rb.gravityScale = baseGravityScale;
+            if (placeFlag) 
+            {
+                Destroy(GameObject.FindWithTag("Flag"));    
+                Instantiate(checkPointFlag, new Vector3(respawnPoint.x, respawnPoint.y - 0.2f, 0f), Quaternion.identity);
+                placeFlag = false;
+            }
         }
     }
 
@@ -305,16 +313,14 @@ public class PlayerMovement : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<Animator>().enabled = false;
         deathParticles.Play();
-        if (!paused && FindAnyObjectByType<LivesManager>().lives == 1) 
+        paused = true;
+        if (FindAnyObjectByType<LivesManager>().lives == 1)
         {
             FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
         }
         else {
             yield return new WaitForSeconds(0.7f);
-            if (!paused) 
-            {
-                FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
-            }
+            FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
         }
     }
     IEnumerator MoveSound() {
