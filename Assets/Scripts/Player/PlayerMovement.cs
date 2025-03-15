@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,11 +34,15 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem particles;
     private bool facingLeft = false;
 
+    bool waterLevel;
+    bool satanLevel;
+
     [SerializeField] private Vector3 respawnPoint = new Vector3(-7f, 0.5f, 0f);
     [SerializeField] private int furthestLevelReached = 0;
     [SerializeField] private int currentLevel = 0;
 
     public bool paused = false;
+    public bool isDead = false;
 
     void Start()
     {
@@ -52,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,Vector2.down,characterHeightFromCenterToGround,IgnoreCameraSnap);
 
         if (raycastHit2D)
+        {
+            coyoteTimer = coyoteTime;
+        }
+        else if (waterLevel)
         {
             coyoteTimer = coyoteTime;
         }
@@ -139,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetTrigger("Jump");
             rb.linearVelocityY = jumpSpeed;
             jumpBufferTimer = 0;
+            coyoteTimer = 0;
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && rb.linearVelocityY > 0)
@@ -205,19 +215,43 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void OnCollisionStay2D(Collision2D collision) 
+    {
+        if (collision.gameObject.CompareTag("FirePit") && collision.gameObject.GetComponent<FirePit>().canDamage && !isDead) 
+        {
+            isDead = true;
+            Die();
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.name.Equals("ChainRope") && !currentChain)
         {
             collider.gameObject.transform.parent.gameObject.GetComponent<SwingingChain>().AttachPlayer(gameObject);
         }
-        else if (collider.gameObject.CompareTag("FirePit") || collider.gameObject.CompareTag("Enemy")) //Add enemy tag and any other obstacle tags 
+        else if (collider.gameObject.CompareTag("Enemy") && !isDead) //Add enemy tag and any other obstacle tags 
         {
+            isDead = true;
             Die();
         }
         else if (collider.gameObject.CompareTag("CameraSnapPos")) {
             mainCamera.transform.position = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, -10f);
             currentLevel = collider.gameObject.GetComponent<CheckpointScript>().level;
+            waterLevel = collider.gameObject.GetComponent<CheckpointScript>().waterLevel;
+            satanLevel = collider.gameObject.GetComponent<CheckpointScript>().satanLevel;
+            if (waterLevel) 
+            {
+                rb.gravityScale = 0.5f*baseGravityScale;
+            }
+            else 
+            {
+                rb.gravityScale = baseGravityScale;
+            }
+            if (satanLevel)
+            {
+                StartCoroutine(StartBoss());
+            }
             FindAnyObjectByType<UIManager>().UpdateLevel(currentLevel);
             if (collider.gameObject.GetComponent<CheckpointScript>().level > furthestLevelReached) 
             {
@@ -244,5 +278,12 @@ public class PlayerMovement : MonoBehaviour
         {
             FindAnyObjectByType<LivesManager>().Respawn(respawnPoint);
         }
+    }
+
+    IEnumerator StartBoss() 
+    {
+        GameObject.FindWithTag("BackWall").GetComponent<BoxCollider2D>().enabled = true;
+        yield return new WaitForSeconds(2f);
+        GameObject.FindWithTag("Satan").GetComponent<SatanAttack>().active = true;
     }
 }

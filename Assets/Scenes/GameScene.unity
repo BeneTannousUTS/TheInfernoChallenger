@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -195,7 +195,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -5177,6 +5177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 38, y: -86.5, z: 0}
   level: 8
+  waterLevel: 1
+  satanLevel: 0
 --- !u!1001 &26482855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5187,7 +5189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -5517,6 +5519,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 42, y: -12.5, z: 0}
   level: 1
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &113245864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5595,7 +5599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5661,7 +5665,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -5828,6 +5832,7 @@ MonoBehaviour:
   furthestLevelReached: 0
   currentLevel: 0
   paused: 0
+  isDead: 0
 --- !u!50 &135729166
 Rigidbody2D:
   serializedVersion: 5
@@ -6192,6 +6197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 8
+  waterLevel: 1
+  satanLevel: 0
 --- !u!1001 &165179322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6202,7 +6209,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6777,7 +6784,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6843,7 +6850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -7033,7 +7040,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -7182,6 +7189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 9
+  waterLevel: 0
+  satanLevel: 1
 --- !u!1001 &292359594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7196,7 +7205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7328,7 +7337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7398,7 +7407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7547,6 +7556,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 18, y: -12.5, z: 0}
   level: 1
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &306547736
 GameObject:
   m_ObjectHideFlags: 0
@@ -7729,7 +7740,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7795,7 +7806,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -7994,7 +8005,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -8696,6 +8707,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 23, y: -23.5, z: 0}
   level: 2
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &410947465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8846,6 +8859,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 14, y: -34.5, z: 0}
   level: 3
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &426838617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8922,7 +8937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9133,6 +9148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 24, y: 56.5, z: 0}
   level: 5
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &501284571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9143,7 +9160,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -9346,7 +9363,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -9412,7 +9429,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -9478,7 +9495,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9627,6 +9644,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 9
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &583076296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9637,7 +9656,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -9791,7 +9810,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -9861,7 +9880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10072,6 +10091,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: -4, y: -67.5, z: 0}
   level: 6
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &680105294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10082,7 +10103,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -10148,7 +10169,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -10276,7 +10297,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -10514,7 +10535,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -10663,6 +10684,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: -45.5, z: 0}
   level: 4
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &771259189
 GameObject:
   m_ObjectHideFlags: 0
@@ -10752,7 +10775,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -10901,6 +10924,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 2
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &844135534
 GameObject:
   m_ObjectHideFlags: 0
@@ -11047,7 +11072,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11113,7 +11138,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11241,7 +11266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11400,7 +11425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11466,7 +11491,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11532,7 +11557,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -11598,7 +11623,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12996,6 +13021,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 6
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &929582073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13218,7 +13245,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -43177,7 +43204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43243,7 +43270,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -43564,6 +43591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: -23.5, z: 0}
   level: 2
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &1047671039
 GameObject:
   m_ObjectHideFlags: 0
@@ -43714,7 +43743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43825,6 +43854,10 @@ PrefabInstance:
     - target: {fileID: 4030612806721233158, guid: d62d4801ba36b074fa0b0d5f037e0d72, type: 3}
       propertyPath: m_TagString
       value: Satan
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718744643715568691, guid: d62d4801ba36b074fa0b0d5f037e0d72, type: 3}
+      propertyPath: active
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7718744643715568691, guid: d62d4801ba36b074fa0b0d5f037e0d72, type: 3}
       propertyPath: slider
@@ -43990,6 +44023,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 16, y: -78.5, z: 0}
   level: 7
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &1121233124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44000,7 +44035,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44303,11 +44338,11 @@ GameObject:
   - component: {fileID: 1125963569}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: BackWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1125963569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44315,7 +44350,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125963568}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -44418,7 +44453,7 @@ Transform:
   m_GameObject: {fileID: 1125963568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.67, y: -98.31, z: 0}
+  m_LocalPosition: {x: 26.5, y: -98, z: 0}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44517,6 +44552,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 0
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &1140946990
 GameObject:
   m_ObjectHideFlags: 0
@@ -44953,6 +44990,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: -7, y: -1.5, z: 0}
   level: 0
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &1169372796
 GameObject:
   m_ObjectHideFlags: 0
@@ -45218,6 +45257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 3
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &1200380929
 GameObject:
   m_ObjectHideFlags: 0
@@ -45311,6 +45352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 43, y: -30.5, z: 0}
   level: 3
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &1215116278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45321,7 +45364,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45520,7 +45563,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -45674,7 +45717,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45802,7 +45845,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -46088,6 +46131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 4
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &1302141120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46160,7 +46205,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46226,7 +46271,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -46292,7 +46337,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -46441,6 +46486,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: -7, y: -56.5, z: 0}
   level: 5
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &1411033015
 GameObject:
   m_ObjectHideFlags: 0
@@ -46587,7 +46634,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46653,7 +46700,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -46719,7 +46766,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -46868,6 +46915,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: -2, y: -100.5, z: 0}
   level: 9
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &1466801182
 GameObject:
   m_ObjectHideFlags: 0
@@ -47112,7 +47161,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -47182,7 +47231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47310,7 +47359,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -47459,6 +47508,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 44, y: -56.5, z: 0}
   level: 5
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &1551451400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47531,7 +47582,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47680,6 +47731,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 7
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &1621060258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47690,7 +47743,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47756,7 +47809,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -47942,7 +47995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48132,7 +48185,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -48198,7 +48251,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48607,6 +48660,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 8
+  waterLevel: 1
+  satanLevel: 0
 --- !u!1 &1788933052
 GameObject:
   m_ObjectHideFlags: 0
@@ -48700,6 +48755,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 1
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &1792763288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48939,7 +48996,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -49005,7 +49062,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -49613,7 +49670,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -49886,6 +49943,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 4
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &1867149850
 GameObject:
   m_ObjectHideFlags: 0
@@ -49979,6 +50038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 0
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &1885062015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8151110518908124685, guid: 17e453851371cca42bbdbb2748d82b5f, type: 3}
@@ -50094,6 +50155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 6
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1 &1919805748
 GameObject:
   m_ObjectHideFlags: 0
@@ -50435,7 +50498,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50501,7 +50564,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -50778,7 +50841,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -50844,7 +50907,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -51055,6 +51118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpointWorldPos: {x: 0, y: 0, z: 0}
   level: 7
+  waterLevel: 0
+  satanLevel: 0
 --- !u!1001 &2073335054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51263,7 +51328,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -51375,7 +51440,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -51613,7 +51678,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3129408455362539620, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4393552216364857201, guid: 7eb4d331e4fbea64d8915f1cdbc01336, type: 3}
       propertyPath: m_Name
@@ -51683,7 +51748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439422558867830618, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4526844114414151830, guid: 2b076d61b09465940981e98874279fa8, type: 3}
       propertyPath: m_LocalPosition.x

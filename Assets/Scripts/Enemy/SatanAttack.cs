@@ -6,6 +6,7 @@ public class SatanAttack : MonoBehaviour
 {
     public GameObject fireBall;
     private bool attacking = false;
+    public bool active = false;
     private float satanHealth = 30;
     public Slider slider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,28 +18,31 @@ public class SatanAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!attacking)
+        if (active) 
         {
-            int rand = Random.Range(0, 5);
-            if (rand == 0)
+            if (!attacking)
             {
-                StartCoroutine(AttackA());
-            }
-            if (rand == 1)
-            {
-                StartCoroutine(AttackB());
-            }
-            if (rand == 2)
-            {
-                StartCoroutine(AttackC());
-            }
-            if (rand == 3)
-            {
-                StartCoroutine(AttackD());
-            }
-            if (rand == 4)
-            {
-                StartCoroutine(Wait());
+                int rand = Random.Range(0, 5);
+                if (rand == 0)
+                {
+                    StartCoroutine(AttackA());
+                }
+                if (rand == 1)
+                {
+                    StartCoroutine(AttackB());
+                }
+                if (rand == 2)
+                {
+                    StartCoroutine(AttackC());
+                }
+                if (rand == 3)
+                {
+                    StartCoroutine(AttackD());
+                }
+                if (rand == 4)
+                {
+                    StartCoroutine(Wait());
+                }
             }
         }
     }

@@ -12,6 +12,7 @@ TagManager:
   - Satan
   - FireBall
   - SatanFireBall
+  - BackWall
   layers:
   - Default
   - TransparentFX

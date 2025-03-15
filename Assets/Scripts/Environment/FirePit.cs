@@ -27,6 +27,7 @@ public class FirePit : MonoBehaviour
             currentTime += Time.deltaTime;
             if (currentTime > changeTime)
             {
+                gameObject.GetComponent<Animator>().enabled = false;
                 sprite.sprite = sprites[1];
                 canDamage = false;
             }
@@ -40,6 +41,7 @@ public class FirePit : MonoBehaviour
             currentTime -= Time.deltaTime;
             if (currentTime < changeTime)
             {
+                gameObject.GetComponent<Animator>().enabled = true;
                 sprite.sprite = sprites[0];
                 canDamage = true;
             }
